@@ -146,7 +146,7 @@ Para habilitar o `django_models` no seu projeto você precisa adiciona-lo ao `IN
 Documentação
 ============
 
-Confira a ultima versão da documento do ``django-models`` em `Read the Docs <http://django-models.readthedocs.io/en/latest/>`_
+Confira a ultima versão da documento do ``django-models`` em `GitHub Pages <https://rhenter.github.io/django-models/>`_
 
 Contribuição
 ============

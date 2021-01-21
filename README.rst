@@ -148,7 +148,7 @@ To enable `django_models` in your project you need to add it to `INSTALLED_APPS`
 Documentation
 =============
 
-Check out the latest ``django-models`` documentation at `Read the Docs <http://django-models.readthedocs.io/en/latest/>`_
+Check out the latest ``django-models`` documentation at `GitHub Pages <https://rhenter.github.io/django-models/>`_
 
 
 Contributing
