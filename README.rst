@@ -4,7 +4,7 @@ Django Models
 
 `Para visualizar o README em português <https://github.com/rhenter/django-models/blob/master/README.pt.rst>`_.
 
-|PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs|
+|PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs| |Open Source? Yes!|
 
 Django Models is Library with several useful templates for Django to help you make your templates smart or with less code
 
@@ -167,3 +167,5 @@ Please send pull requests, very much appreciated.
    :target: https://circleci.com/gh/rhenter/django-models
 .. |Coverage| image:: https://codecov.io/gh/rhenter/django-models/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/rhenter/django-models
+.. |Open Source? Yes!| image:: https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github
+   :target: https://github.com/rhenter/django-models
