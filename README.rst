@@ -2,6 +2,8 @@
 Django Models
 =============
 
+`Para visualizar o README em português <https://github.com/rhenter/django-models/blob/master/README.pt.rst>`_.
+
 |PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs|
 
 Django Models is Library with several useful templates for Django to help you make your templates smart or with less code
@@ -24,11 +26,11 @@ Generic Models
 
 - CodeModel
 
-  Model with 32 characters hash code to use to identify your record
+  Model with a code field that automatically generates a hash of 16 characters by default. Useful to identify your record in a more humane way
 
 - SerializerModel
 
-  Model to return a dict with all data of your django instance without a serializaer.
+  Model to return a dict with all data of your django instance without a serializer.
 
 
 Example:
@@ -55,27 +57,27 @@ Example:
 
 - SlugModel
 
-  Model with slug field
+  Model with a slug field. Useful to use in urls or nominal references
 
 - TimestampedModel
 
-  Model with created_at and updated_at DateTime fields
+  Model with the DateTime, created_at and updated_at fields. Useful to control when any changes were made.
 
 - UUIDModel
 
-  Model using the field id as UUID
+  Model that uses the id field as a UUID. Useful to be able to have a unique identifier without worrying about sequences.
 
 - Signals
 
 With SignalModel it allows you to handle or execute an event according to Django's Signals.
 
-On save:
- - pre_save
- - post_save
+On Save:
+  - pre_save (Before Saving)
+  - post_save (After saving)
 
-On Delete
- - pre_delete
- - post_delete
+On Erase:
+  - pre_delete (Before Erasing)
+  - post_delete (After Deleting)
 
 Example using Pre-save signal
 
@@ -109,7 +111,7 @@ You can get Django Models by using pip:
     $ pip install django-models
 
 
-If you want to install it from source, grab the git repository from Gitlab and run setup.py:
+If you want to install it from source, grab the git repository from GitHub and run setup.py:
 
 .. code:: shell
 
@@ -118,8 +120,8 @@ If you want to install it from source, grab the git repository from Gitlab and r
     $ python setup.py install
 
 
-Installing It
--------------
+Settings
+--------
 
 To enable `django_models` in your project you need to add it to `INSTALLED_APPS` in your projects
 `settings.py` file:
