@@ -4,7 +4,7 @@ Django Models
 
 |PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs| |Open Source? Yes!|
 
-Django Models é uma biblioteca com vários templates úteis para Django para ajudá-lo a tornar seus templates inteligentes ou com menos código
+Django Models é uma biblioteca com vários Modelos úteis para Django para ajudá-lo a tornar seus templates inteligentes ou com menos código
 
 Requirements
 ============
@@ -26,14 +26,17 @@ Generic Models
 
   Modelo com um campo code que gera automaticamente um hash de 16 caracteres por padrão. Muito util para identificar seu registro de forma mais humanizada
 
+History models
+--------------
+
+- HistoryModel
+
+  Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Historico de modificações da instância
+
 - SerializerModel
 
   Modelo com o metodo serialize que retorna um dict com todas as informações da instância sem precisar de um serializador configurado.
 
-Como Instalar
-Examplo:
-
-Vamos la!delo**
 .. code-block:: python
 
     from django_models.models import SignalsModel
@@ -58,13 +61,17 @@ Vamos la!delo**
 
 - TimestampedModel
 
-  Template with DateTime, created_at and updated_at fields. Useful to control when any changes were made.
+  Modelo com os campos Datetime, created_at and updated_at. Uteis para controlar quando uma instancia foi criada ou aterada.
 
 - UUIDModel
 
   Modelo que usa o campo id como um UUID. Util para poder ter um identificador único sem se preocupar com sequenciais.
 
-- Signals
+
+Signals Models
+--------------
+
+- SignalsModel
 
 Usando o SignalsModel, permite que você manipule ou execute um evento de acordo com os Signals do Django.
 
@@ -89,9 +96,13 @@ Examplo usando o signal Pre-save
             do_something()
 
 
-- History models
+Soft Delete Signal Model
+------------------------
 
-  Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Historico de modificações da instância
+- SoftDeleteSignalModel Models
+
+  É o SignalsModel com soft delete implementado. Permite que nada que você apague seja realmente apagado do sistema e de facil recuperação
+
 
 Como Instalar
 =============
@@ -151,8 +162,8 @@ Por favor envie pull requests, são muito apreciados.
 6. Crie um Pull Request com a sua contribuição
 
 
-.. |Docs| image:: https://readthedocs.org/projects/django-models/badge/?version=latest
-   :target: http://django-models.readthedocs.org/en/latest/?badge=latest
+.. |Docs| image:: https://img.shields.io/static/v1?label=DOC&message=GitHub%20Pages&color=%3CCOLOR%3E
+   :target: https://rhenter.github.io/django-models/
 .. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-models.svg?maxAge=60
    :target: https://pypi.python.org/pypi/django-models
 .. |PyPI License| image:: https://img.shields.io/pypi/l/django-models.svg?maxAge=120

@@ -3,17 +3,29 @@ Generic Models
 
 You just need to add to your template to get the behaviors below. Use as many models as you want.
 
+ActiveModel
+-----------
 
-SlugModel
----------
-
-Model with a slugField already implemented
+Model with is_active boolean field
 
 Usage:
 
 .. code-block:: python
 
-    class YourModel(SlugModel)
+    class YourModel(ActiveModel)
+       ...
+
+
+CodeModel
+---------
+
+Model with a code field that automatically generates a hash of 16 characters by default. Useful to identify your record in a more humane way
+
+Usage:
+
+.. code-block:: python
+
+    class YourModel(CodeModel)
        ...
 
 
@@ -30,6 +42,7 @@ Usage:
     ...
 
     class YourModel(SerializerModel)
+        name = models.CharField(max_length=255)
         ...
 
 Example of a instance from a Model using the SerializerModel
@@ -41,6 +54,21 @@ Example of a instance from a Model using the SerializerModel
         'id': 1,
         'name': 'Test'
     }
+
+
+SlugModel
+---------
+
+Model with a slug field. Useful to use in urls or nominal references
+
+Usage:
+
+.. code-block:: python
+
+    class YourModel(SlugModel)
+       ...
+
+
 
 
 TimestampedModel
@@ -61,7 +89,7 @@ Usage:
 UUIDModel
 ---------
 
-Model with UUIDPrimaryKeyField already implemented
+Model that uses the id field as a UUID. Useful to be able to have a unique identifier without worrying about sequences.
 
 
 Usage:

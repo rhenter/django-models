@@ -7,3 +7,4 @@ Models
     generic.rst
     history.rst
     signals.rst
+    soft_delete.rst

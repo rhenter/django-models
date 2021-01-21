@@ -19,11 +19,11 @@
 #
 import os
 import sys
+
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '../../'))
 sys.path.insert(0, PROJECT_ROOT)
 
 from django_models import __version__
-
 
 # -- General configuration ------------------------------------------------
 
@@ -34,12 +34,17 @@ from django_models import __version__
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.autodoc',
+extensions = [
+    'sphinx.ext.autodoc',
     'sphinx.ext.doctest',
-    'sphinx.ext.todo',
     'sphinx.ext.coverage',
     'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages']
+    "sphinx.ext.intersphinx",
+    "sphinx.ext.ifconfig",
+    "sphinx.ext.graphviz",
+    "sphinx.ext.githubpages",
+    "sphinxjp.themes.basicstrap",
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -55,7 +60,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Django Models'
-copyright = '2019, Rafael Henter'
+copyright = '2021, Rafael Henter'
 author = 'Rafael Henter'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -72,7 +77,9 @@ release = __version__
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'pt_BR'
+locale_dirs = ['locale/']  # path is example but recommended.
+gettext_compact = False
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -80,11 +87,11 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+# pygments_style = 'sphinx'
+pygments_style = None
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
-
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -92,12 +99,89 @@ todo_include_todos = True
 # a list of builtin themes.
 #
 # html_theme = 'alabaster'
-on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
-if not on_rtd:
-    import sphinx_rtd_theme
-    html_theme = 'sphinx_rtd_theme'
-    html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+# on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
+# if not on_rtd:
+#     import sphinx_rtd_theme
+#
+#     html_theme = 'sphinx_rtd_theme'
+#     html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
 
+# -- Options for HTML output -------------------------------------------------
+html_theme = 'basicstrap'
+
+
+html_theme_options = {
+
+    # Set the lang attribute of the html tag. Defaults to 'en'
+    'lang': language,
+    # Disable showing the sidebar. Defaults to 'false'
+    'nosidebar': False,
+    # Show header searchbox. Defaults to false. works only "nosidber=True",
+    'header_searchbox': False,
+
+    # Put the sidebar on the right side. Defaults to false.
+    'rightsidebar': False,
+    # Set the width of the sidebar. Defaults to 3
+    'sidebar_span': 3,
+
+    # Fix navbar to top of screen. Defaults to true
+    'nav_fixed_top': True,
+    # Fix the width of the sidebar. Defaults to false
+    'nav_fixed': False,
+    # Set the width of the sidebar. Defaults to '900px'
+    'nav_width': '900px',
+    # Fix the width of the content area. Defaults to false
+
+    'content_fixed': False,
+    # Set the width of the content area. Defaults to '900px'
+    'content_width': '900px',
+    # Fix the width of the row. Defaults to false
+    'row_fixed': False,
+
+    # Disable the responsive design. Defaults to false
+    'noresponsive': False,
+    # Disable the responsive footer relbar. Defaults to false
+    'noresponsiverelbar': False,
+    # Disable flat design. Defaults to false.
+    # Works only "bootstrap_version = 3"
+    'noflatdesign': False,
+
+    # Enable Google Web Font. Defaults to false
+    'googlewebfont': False,
+    # Set the URL of Google Web Font's CSS.
+    # Defaults to 'http://fonts.googleapis.com/css?family=Text+Me+One'
+    'googlewebfont_url': 'http://fonts.googleapis.com/css?family=Lily+Script+One',  # NOQA
+    # Set the Style of Google Web Font's CSS.
+    # Defaults to "font-family: 'Text Me One', sans-serif;"
+    'googlewebfont_style': u"font-family: 'Lily Script One' cursive;",
+
+    # Set 'navbar-inverse' attribute to header navbar. Defaults to false.
+    'header_inverse': False,
+    # Set 'navbar-inverse' attribute to relbar navbar. Defaults to false.
+    'relbar_inverse': False,
+
+    # Enable inner theme by Bootswatch. Defaults to false
+    'inner_theme': False,
+    # Set the name of innner theme. Defaults to 'bootswatch-simplex'
+    'inner_theme_name': 'bootswatch-simplex',
+
+    # Select Twitter bootstrap version 2 or 3. Defaults to '3'
+    'bootstrap_version': '3',
+
+    # Show "theme preview" button in header navbar. Defaults to false.
+    'theme_preview': False,
+
+    # Set the Size of Heading text. Defaults to None
+    # 'h1_size': '3.0em',
+    # 'h2_size': '2.6em',
+    # 'h3_size': '2.2em',
+    # 'h4_size': '1.8em',
+    # 'h5_size': '1.4em',
+    # 'h6_size': '1.1em',
+}
+# html_sidebars = {"**": ["sidebar.html"]}
+
+show_related = True
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
@@ -114,19 +198,17 @@ html_static_path = ['_static']
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-    ]
-}
-
+# html_sidebars = {
+#     '**': [
+#         'relations.html',  # needs 'show_related': True theme option to display
+#         'searchbox.html',
+#     ]
+# }
 
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'DjangoStuffdoc'
-
+htmlhelp_basename = 'django-api-client-doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -152,20 +234,18 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'DjangoStuff.tex', 'Django Models Documentation',
+    (master_doc, 'DjangoApiClient.tex', 'Django Models Documentation',
      'Rafael Henter', 'manual'),
 ]
-
 
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'DjangoStuff', 'Django Models Documentation',
+    (master_doc, 'DjangoApiClient', 'Django Models Documentation',
      [author], 1)
 ]
-
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -173,12 +253,11 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'DjangoStuff', 'Django Models Documentation',
-     author, 'DjangoStuff', 'One line description of project.',
+    (master_doc, 'DjangoApiClient', 'Django Models Documentation',
+     author, 'DjangoApiClient',
+     'Django Models is a client for APIs in general, which allows iterating with the API as if they were using a Local model in their project, through a client and Custom CBV (Class based Views).',
      'Miscellaneous'),
 ]
-
-
 
 # -- Options for Epub output ----------------------------------------------
 
@@ -199,5 +278,3 @@ epub_copyright = copyright
 
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
-
-

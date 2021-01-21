@@ -6,7 +6,7 @@ Django Models
 
 |PyPI latest| |PyPI Version| |PyPI License|  |CicleCI Status| |Coverage| |Docs| |Open Source? Yes!|
 
-Django Models is Library with several useful templates for Django to help you make your templates smart or with less code
+Django Models is Library with several useful Models for Django to help you make your templates smart or with less code
 
 Requirements
 ============
@@ -67,7 +67,14 @@ Example:
 
   Model that uses the id field as a UUID. Useful to be able to have a unique identifier without worrying about sequences.
 
-- Signals
+History models
+--------------
+
+- History Model
+  Model that track each save to generate a History Changes of a record
+
+Signals Models
+--------------
 
 With SignalModel it allows you to handle or execute an event according to Django's Signals.
 
@@ -93,10 +100,13 @@ Note: This will be made before you save your model
         def pre_save(self):
             do_something()
 
+Soft Delete Signal Model
+------------------------
 
-- History models
+- SoftDeleteSignalModel Models
 
-  Model that track each save to generate a History Changes of a record
+  It is the SignalsModel with soft delete implemented. Allows nothing you delete to be really deleted from the system and easy to recover
+
 
 How to install
 ==============
@@ -155,8 +165,8 @@ Please send pull requests, very much appreciated.
 6. Create a Pull Request with your contribution
 
 
-.. |Docs| image:: https://readthedocs.org/projects/django-models/badge/?version=latest
-   :target: http://django-models.readthedocs.org/en/latest/?badge=latest
+.. |Docs| image:: https://img.shields.io/static/v1?label=DOC&message=GitHub%20Pages&color=%3CCOLOR%3E
+   :target: https://rhenter.github.io/django-models/
 .. |PyPI Version| image:: https://img.shields.io/pypi/pyversions/django-models.svg?maxAge=60
    :target: https://pypi.python.org/pypi/django-models
 .. |PyPI License| image:: https://img.shields.io/pypi/l/django-models.svg?maxAge=120
