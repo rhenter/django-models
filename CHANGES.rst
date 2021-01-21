@@ -1,10 +1,15 @@
 Changelog
 =========
+0.2.1
+~~~~~
+
+- Fix typo
+
 0.2.0
 ~~~~~
 
 - Update documentation
-- Translate documentação do Portuguese
+- Translate the documentation to Portuguese
 
 0.1.0
 ~~~~~
