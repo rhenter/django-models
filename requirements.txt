@@ -1,0 +1,4 @@
+cached_property>=1.3.0
+django>=1.11
+djangorestframework>=3.7
+unipath

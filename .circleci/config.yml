@@ -1,0 +1,48 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/python:3.6.2
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ .Branch }}-{{ checksum "requirements-ci.txt" }}
+
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install -r requirements-ci.txt
+
+      - save_cache:
+          paths:
+            - ./venv
+          key: v1-dependencies-{{ .Branch }}-{{ checksum "requirements-ci.txt" }}
+
+      - run:
+          name: check pep8
+          command:
+            . venv/bin/activate
+            flake8 -v --ignore=E501 django_models test-django-project
+
+      - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            cd ~/repo/test-django-project && py.test -vvv -s --cov django_models --cov-report=term-missing --cov-report=html
+            codecov
+
+      - store_artifacts:
+          path: test-django-project/htmlcov
+          destination: test-reports
+
+branches:
+  only:
+    - master

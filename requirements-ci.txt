@@ -1,0 +1,8 @@
+-r requirements.txt
+codecov
+flake8
+pytest-cov
+pytest-django
+pytest>=3
+python-status
+vcrpy

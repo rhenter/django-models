@@ -1,0 +1,2 @@
+class HistoryModelNotSetError(BaseException):
+    pass
