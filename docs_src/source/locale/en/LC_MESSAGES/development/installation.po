@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/development/installation.rst:2
+msgid "Development Installation"
+msgstr ""
+
+#: ../../source/development/installation.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/development/installation.rst:7
+msgid "Python 3.x"
+msgstr ""
+
+#: ../../source/development/installation.rst:8
+msgid "Django 1.11 or later"
+msgstr ""
+
+#: ../../source/development/installation.rst:12
+msgid "Development install"
+msgstr ""
+
+#: ../../source/development/installation.rst:14
+msgid "After forking or checking out:"
+msgstr ""
+
+#: ../../source/development/installation.rst:22
+msgid ""
+"The requirements-dev are only used for development, so we can easily "
+"install/track dependencies required to run the tests using continuous "
+"integration platforms."
+msgstr ""
+
+#: ../../source/development/installation.rst:26
+msgid ""
+"The official entrypoint for distritubution is the ``requirements.txt`` "
+"which contains the minimum requirements to execute the tests."
+msgstr ""
+
+#: ../../source/development/installation.rst:31
+msgid "Running tests"
+msgstr ""
+
+#: ../../source/development/installation.rst:37
+msgid "or:"
+msgstr ""
+
+#: ../../source/development/installation.rst:45
+msgid "Generating documentation"
+msgstr ""
+

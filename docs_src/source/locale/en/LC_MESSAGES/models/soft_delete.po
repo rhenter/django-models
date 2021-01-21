@@ -1,0 +1,38 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/models/soft_delete.rst:2
+msgid "Soft Delete Signal Model"
+msgstr ""
+
+#: ../../source/models/soft_delete.rst:4
+msgid ""
+"It is the SignalsModel with soft delete implemented. Allows nothing you "
+"delete to be really deleted from the system and easy to recover"
+msgstr ""
+
+#: ../../source/models/soft_delete.rst:6
+msgid "Usage in the Model:"
+msgstr ""
+
+#: ../../source/models/soft_delete.rst:21
+msgid "Restore"
+msgstr ""
+

@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/development/documentation.rst:2
+msgid "Documentation"
+msgstr ""
+
+#: ../../source/development/documentation.rst:5
+msgid "Update or Add New"
+msgstr ""
+
+#: ../../source/development/documentation.rst:7
+msgid ""
+"To add new or update documentation, you must add or change existing files"
+" in RST format, located at ``docs_src/source``"
+msgstr ""
+
+#: ../../source/development/documentation.rst:10
+msgid ""
+"If you added a new file, make sure you add the reference in the directory"
+" ``docs_src/source/index.rst``"
+msgstr ""
+
+#: ../../source/development/documentation.rst:14
+msgid "Update the translation"
+msgstr ""
+
+#: ../../source/development/documentation.rst:16
+msgid ""
+"Today we have 2 translations, being ``en`` (english) and ``pt_BR`` "
+"Portuguese, if you want to add one more, just add the prefix of the "
+"language that will be generated or updated in located in "
+"``docs_src/source/locale/``"
+msgstr ""
+
+#: ../../source/development/documentation.rst:19
+msgid "Generate the .po files to update"
+msgstr ""
+
+#: ../../source/development/documentation.rst:28
+msgid ""
+"Update the .po files in ``docs_src/source/locale/< LANGUAGE prefix "
+">/LC_MESSAGES/``"
+msgstr ""
+
+#: ../../source/development/documentation.rst:30
+msgid "Example:"
+msgstr ""
+
+#: ../../source/development/documentation.rst:40
+msgid "The .mo file will be generated when you generate the HTML files"
+msgstr ""
+
+#: ../../source/development/documentation.rst:43
+msgid "Generating the documentation"
+msgstr ""
+
+#: ../../source/development/documentation.rst:45
+msgid ""
+"The project uses GitHub Pages to host the documentation files, so all "
+"HTML files must be located in /doc"
+msgstr ""
+

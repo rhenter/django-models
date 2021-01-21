@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Utils &mdash; Django Models 0.2.1 documentation</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '0.2.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="Django Models 0.2.1 documentation" href="index.html" />
+    <link rel="next" title="Development Installation" href="development/installation.html" />
+    <link rel="prev" title="Soft Delete Signal Model" href="models/soft_delete.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">Django Models 0.2.1 documentation</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Utils</a><ul>
+<li><a class="reference internal" href="#generate-md5-hashcode">generate_md5_hashcode</a></li>
+<li><a class="reference internal" href="#generate-random-code">generate_random_code</a></li>
+<li><a class="reference internal" href="#generate-datetime">generate_datetime</a></li>
+<li><a class="reference internal" href="#is-equal">is_equal</a></li>
+<li><a class="reference internal" href="#sanitize-digits">sanitize_digits</a></li>
+<li><a class="reference internal" href="#validate-cpf">validate_cpf</a></li>
+<li><a class="reference internal" href="#validate-cnpj">validate_cnpj</a></li>
+</ul>
+</li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="models/soft_delete.html" title="Soft Delete Signal Model" accesskey="P">previous </a></li>
+              <li><a href="development/installation.html" title="Development Installation" accesskey="N">next </a></li>
+              <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
+            
+            <li class="visible-xs"><a href="_sources/utils.rst.txt" rel="nofollow">Show Source</a></li>
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Go" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Utils</a><ul>
+<li><a class="reference internal" href="#generate-md5-hashcode">generate_md5_hashcode</a></li>
+<li><a class="reference internal" href="#generate-random-code">generate_random_code</a></li>
+<li><a class="reference internal" href="#generate-datetime">generate_datetime</a></li>
+<li><a class="reference internal" href="#is-equal">is_equal</a></li>
+<li><a class="reference internal" href="#sanitize-digits">sanitize_digits</a></li>
+<li><a class="reference internal" href="#validate-cpf">validate_cpf</a></li>
+<li><a class="reference internal" href="#validate-cnpj">validate_cnpj</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="models/soft_delete.html"
+                        title="previous chapter">Soft Delete Signal Model</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="development/installation.html"
+                        title="next chapter">Development Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/utils.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" role="search">
+  <h3>Quick search</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Go" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="utils">
+<h1>Utils<a class="headerlink" href="#utils" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="generate-md5-hashcode">
+<h2>generate_md5_hashcode<a class="headerlink" href="#generate-md5-hashcode" title="Permalink to this headline">¶</a></h2>
+<p>Generates an MD5 hash code from a key word</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">generate_md5_hashcode</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">generate_md5_hashcode</span><span class="p">(</span><span class="s1">&#39;test&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s1">&#39;39df5136522809aafdf726f1a8a7d00d&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generate-random-code">
+<h2>generate_random_code<a class="headerlink" href="#generate-random-code" title="Permalink to this headline">¶</a></h2>
+<p>Generates an random code with a specific length</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">generate_random_code</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">generate_random_code</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>    <span class="c1"># with 16 length</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s1">&#39;U7Q2M1FW79WIGSW0&#39;</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">generate_random_code</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>    <span class="c1"># with 10 length</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;D2U2PHUSBD&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="generate-datetime">
+<h2>generate_datetime<a class="headerlink" href="#generate-datetime" title="Permalink to this headline">¶</a></h2>
+<p>Generates an random datetime</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">generate_datetime</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">generate_datetime</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">1995</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">32</span><span class="p">,</span> <span class="mi">955163</span><span class="p">)</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">generate_datetime</span><span class="p">(</span><span class="n">min_year</span><span class="o">=</span><span class="mi">2019</span><span class="p">)</span>    <span class="c1"># with min_year</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2019</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">26</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">38</span><span class="p">,</span> <span class="mi">303408</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="is-equal">
+<h2>is_equal<a class="headerlink" href="#is-equal" title="Permalink to this headline">¶</a></h2>
+<p>Checks if the word are formed with the same character</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">is_equal</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">is_equal</span><span class="p">(</span><span class="s1">&#39;asdfgh&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kc">False</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">is_equal</span><span class="p">(</span><span class="s1">&#39;aaaaaaaaaa&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="kc">True</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="sanitize-digits">
+<h2>sanitize_digits<a class="headerlink" href="#sanitize-digits" title="Permalink to this headline">¶</a></h2>
+<p>Removes all non digits characters from a string</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">sanitize_digits</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">sanitize_digits</span><span class="p">(</span><span class="s1">&#39;123.123.123-23&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="s1">&#39;12312312323&#39;</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">sanitize_digits</span><span class="p">(</span><span class="s1">&#39;123ASDF&#39;</span><span class="p">)</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;123&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="validate-cpf">
+<h2>validate_cpf<a class="headerlink" href="#validate-cpf" title="Permalink to this headline">¶</a></h2>
+<p>Validates CPF code and return the original number</p>
+<p>Ps: doesn’t matter if you use a masked number or not</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">validate_cpf</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">validate_cnpj</span><span class="p">(</span><span class="s1">&#39;01212312312&#39;</span><span class="p">)</span>   <span class="c1"># Invalid</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kc">False</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">validate_cpf</span><span class="p">(</span><span class="s1">&#39;062.265.326-10&#39;</span><span class="p">)</span> <span class="c1"># Valid</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;062.265.326-10&#39;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="validate-cnpj">
+<h2>validate_cnpj<a class="headerlink" href="#validate-cnpj" title="Permalink to this headline">¶</a></h2>
+<p>Validates CNPJ code and return the original number</p>
+<p>Ps: doesn’t matter if you use a masked number or not</p>
+<p>Usage:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">django_models.utils</span> <span class="kn">import</span> <span class="n">validate_cnpj</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="n">validate_cnpj</span><span class="p">(</span><span class="s1">&#39;12345123/000000&#39;</span><span class="p">)</span>      <span class="c1"># Invalid</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kc">False</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">validate_cnpj</span><span class="p">(</span><span class="s1">&#39;61.553.678/0001-96&#39;</span><span class="p">)</span>   <span class="c1"># Valid</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="s1">&#39;61.553.678/0001-96&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">Django Models 0.2.1 documentation</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="models/soft_delete.html" title="Soft Delete Signal Model" >previous</a></li>
+        <li><a href="development/installation.html" title="Development Installation" >next</a></li>
+        <li><a href="genindex.html" title="General Index" >index</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2021, Rafael Henter.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.3.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

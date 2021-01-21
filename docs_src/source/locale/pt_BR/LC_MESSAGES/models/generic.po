@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/models/generic.rst:2
+msgid "Generic Models"
+msgstr ""
+
+#: ../../source/models/generic.rst:4
+msgid ""
+"You just need to add to your template to get the behaviors below. Use as "
+"many models as you want."
+msgstr ""
+
+#: ../../source/models/generic.rst:7
+msgid "ActiveModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:9
+msgid "Model with is_active boolean field"
+msgstr ""
+
+#: ../../source/models/generic.rst:11 ../../source/models/generic.rst:24
+#: ../../source/models/generic.rst:37 ../../source/models/generic.rst:64
+#: ../../source/models/generic.rst:79 ../../source/models/generic.rst:95
+msgid "Usage:"
+msgstr ""
+
+#: ../../source/models/generic.rst:20
+msgid "CodeModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:22
+msgid ""
+"Model with a code field that automatically generates a hash of 16 "
+"characters by default. Useful to identify your record in a more humane "
+"way"
+msgstr ""
+
+#: ../../source/models/generic.rst:33
+msgid "SerializerModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:35
+msgid ""
+"Model with serialize method making possible serializer your instance data"
+" returning a dict."
+msgstr ""
+
+#: ../../source/models/generic.rst:48
+msgid "Example of a instance from a Model using the SerializerModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:60
+msgid "SlugModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:62
+msgid "Model with a slug field. Useful to use in urls or nominal references"
+msgstr ""
+
+#: ../../source/models/generic.rst:75
+msgid "TimestampedModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:77
+msgid ""
+"Model with created_at and updated_at fields to let you know when your "
+"instance wore created and updated"
+msgstr ""
+
+#: ../../source/models/generic.rst:90
+msgid "UUIDModel"
+msgstr ""
+
+#: ../../source/models/generic.rst:92
+msgid ""
+"Model that uses the id field as a UUID. Useful to be able to have a "
+"unique identifier without worrying about sequences."
+msgstr ""
+

@@ -1,0 +1,90 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/utils.rst:2
+msgid "Utils"
+msgstr ""
+
+#: ../../source/utils.rst:5
+msgid "generate_md5_hashcode"
+msgstr ""
+
+#: ../../source/utils.rst:7
+msgid "Generates an MD5 hash code from a key word"
+msgstr ""
+
+#: ../../source/utils.rst:9 ../../source/utils.rst:23 ../../source/utils.rst:38
+#: ../../source/utils.rst:53 ../../source/utils.rst:68
+#: ../../source/utils.rst:85 ../../source/utils.rst:102
+msgid "Usage:"
+msgstr ""
+
+#: ../../source/utils.rst:19
+msgid "generate_random_code"
+msgstr ""
+
+#: ../../source/utils.rst:21
+msgid "Generates an random code with a specific length"
+msgstr ""
+
+#: ../../source/utils.rst:34
+msgid "generate_datetime"
+msgstr ""
+
+#: ../../source/utils.rst:36
+msgid "Generates an random datetime"
+msgstr ""
+
+#: ../../source/utils.rst:49
+msgid "is_equal"
+msgstr ""
+
+#: ../../source/utils.rst:51
+msgid "Checks if the word are formed with the same character"
+msgstr ""
+
+#: ../../source/utils.rst:64
+msgid "sanitize_digits"
+msgstr ""
+
+#: ../../source/utils.rst:66
+msgid "Removes all non digits characters from a string"
+msgstr ""
+
+#: ../../source/utils.rst:79
+msgid "validate_cpf"
+msgstr ""
+
+#: ../../source/utils.rst:81
+msgid "Validates CPF code and return the original number"
+msgstr ""
+
+#: ../../source/utils.rst:83 ../../source/utils.rst:100
+msgid "Ps: doesn't matter if you use a masked number or not"
+msgstr ""
+
+#: ../../source/utils.rst:96
+msgid "validate_cnpj"
+msgstr ""
+
+#: ../../source/utils.rst:98
+msgid "Validates CNPJ code and return the original number"
+msgstr ""
+

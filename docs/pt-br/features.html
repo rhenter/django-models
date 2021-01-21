@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+
+
+
+<html lang="pt_BR">
+  <head>
+    <meta charset="utf-8" />
+    
+    <title>Generic Models &mdash; documentação Django Models 0.2.1</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    
+
+<link rel="stylesheet" href="_static/css/basicstrap-base.css" type="text/css" />
+<link rel="stylesheet" id="current-theme" href="_static/css/bootstrap3/bootstrap.min.css" type="text/css" />
+<link rel="stylesheet" id="current-adjust-theme" type="text/css" />
+
+<link rel="stylesheet" href="_static/css/font-awesome.min.css">
+
+<style type="text/css">
+  body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+</style>
+
+<link rel="stylesheet" href="_static/css/basicstrap.css" type="text/css" />
+<link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+<link rel="stylesheet" href="_static/graphviz.css" type="text/css" />
+    
+<script type="text/javascript">
+  var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:    './',
+            VERSION:     '0.2.1',
+            COLLAPSE_INDEX: false,
+            FILE_SUFFIX: '.html',
+            HAS_SOURCE:  true
+  };
+</script>
+    <script type="text/javascript" src="_static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="_static/js/bootstrap3.min.js"></script>
+<script type="text/javascript" src="_static/js/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="_static/js/basicstrap.js"></script>
+<script type="text/javascript">
+</script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="top" title="documentação Django Models 0.2.1" href="index.html" />
+    <link rel="next" title="Installation" href="quickstart/installation.html" />
+    <link rel="prev" title="Bem Vindo a documentação do Django Models" href="index.html" /> 
+  </head>
+  <body role="document">
+    <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">documentação Django Models 0.2.1</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+              <li class="dropdown visible-xs">
+                <a role="button" id="localToc" data-toggle="dropdown" data-target="#" href="#">Table Of Contents <b class="caret"></b></a>
+                <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
+                <ul>
+<li><a class="reference internal" href="#">Generic Models</a></li>
+<li><a class="reference internal" href="#history-model">History Model</a></li>
+<li><a class="reference internal" href="#signals-models">Signals Models</a></li>
+<li><a class="reference internal" href="#soft-delete-signal-model">Soft Delete Signal Model</a></li>
+</ul>
+
+                </ul>
+              </li>
+
+            
+              <li><a href="index.html" title="Bem Vindo a documentação do Django Models" accesskey="P">anterior </a></li>
+              <li><a href="quickstart/installation.html" title="Installation" accesskey="N">próximo </a></li>
+              <li><a href="genindex.html" title="Índice Geral" accesskey="I">índice </a></li>
+            
+            <li class="visible-xs"><a href="_sources/features.rst.txt" rel="nofollow">Exibir Fonte</a></li>
+
+            <li class="visible-xs">
+                <form class="search form-search form-inline navbar-form navbar-right sp-searchbox" action="search.html" method="get">
+                  <div class="input-append input-group">
+                    <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+                    <span class="input-group-btn">
+                    <input type="submit" class="btn" value="Ir" />
+                    </span>
+                  </div>
+                  <input type="hidden" name="check_keywords" value="yes" />
+                  <input type="hidden" name="area" value="default" />
+                </form>
+            </li>
+
+            
+
+          </ul>
+
+        </div>
+      </div>
+    </div>
+    
+
+    <!-- container -->
+    <div class="container-fluid">
+
+      <!-- row -->
+      <div class="row">
+         
+<div class="col-md-3 hidden-xs" id="sidebar-wrapper">
+  <div class="sidebar hidden-xs" role="navigation" aria-label="main navigation">
+  <h3><a href="index.html">Tabela de Conteúdo</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Generic Models</a></li>
+<li><a class="reference internal" href="#history-model">History Model</a></li>
+<li><a class="reference internal" href="#signals-models">Signals Models</a></li>
+<li><a class="reference internal" href="#soft-delete-signal-model">Soft Delete Signal Model</a></li>
+</ul>
+
+  <h4>Tópico anterior</h4>
+  <p class="topless"><a href="index.html"
+                        title="capítulo anterior">Bem Vindo a documentação do Django Models</a></p>
+  <h4>Próximo tópico</h4>
+  <p class="topless"><a href="quickstart/installation.html"
+                        title="próximo capítulo">Installation</a></p>
+  <div role="note" aria-label="source link">
+    <h3>Essa Página</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/features.rst.txt"
+            rel="nofollow">Exibir Fonte</a></li>
+    </ul>
+   </div>
+<div id="searchbox" role="search">
+  <h3>Busca rápida</h3>
+  <form class="search form-inline" action="search.html" method="get">
+      <div class="input-append input-group">
+        <input type="text" class="search-query form-control" name="q" placeholder="Search...">
+        <span class="input-group-btn">
+        <input type="submit" class="btn" value="Ir" />
+        </span>
+      </div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+  </div>
+</div> 
+        
+
+        <div class="col-md-9" id="content-wrapper">
+          <div class="document" role="main">
+            <div class="documentwrapper">
+              <div class="bodywrapper">
+                <div class="body">
+                  
+  <div class="section" id="generic-models">
+<h1>Generic Models<a class="headerlink" href="#generic-models" title="Link permanente para este título">¶</a></h1>
+<ul>
+<li><p>SerializerModel</p>
+<p>Modelo com o metodo serialize que retorna um dict com todas as informações da instância sem precisar de um serializador configurado.</p>
+</li>
+</ul>
+<p>Exemplo:</p>
+<p><strong>Seus Modelo</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_models.models</span> <span class="kn">import</span> <span class="n">SignalsModel</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">YourModel</span><span class="p">(</span><span class="n">SignalsModel</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Uso</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">YourModel</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">user</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;first record&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p>SlugModel</p>
+<p>Modelo com um campo slug. util para se usar em urls ou referencias nominais</p>
+</li>
+<li><p>TimestampedModel</p>
+<p>Modelo com os campos Datetime, created_at and updated_at. Uteis para controlar quando uma instancia foi criada ou aterada.</p>
+</li>
+<li><p>UUIDModel</p>
+<p>Modelo que usa o campo id como um UUID. Util para poder ter um identificador único sem se preocupar com sequenciais.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="history-model">
+<h1>History Model<a class="headerlink" href="#history-model" title="Link permanente para este título">¶</a></h1>
+<ul>
+<li><p>History models</p>
+<p>Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Historico de modificações da instância</p>
+</li>
+</ul>
+</div>
+<div class="section" id="signals-models">
+<h1>Signals Models<a class="headerlink" href="#signals-models" title="Link permanente para este título">¶</a></h1>
+<p>Usando o SignalsModel, permite que você manipule ou execute um evento de acordo com os Signals do Django.</p>
+<dl class="simple">
+<dt>Ao Salvar</dt><dd><ul class="simple">
+<li><p>pre_save (Antes de Salvar)</p></li>
+<li><p>post_save (Depois de Salvar)</p></li>
+</ul>
+</dd>
+<dt>Ao Apagar</dt><dd><ul class="simple">
+<li><p>pre_delete (Antes de Apagar)</p></li>
+<li><p>post_delete (Depois de Apagar)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Examplo usando o signal Pre-save</p>
+<p>Note: This will be made before you save your model</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_models.models</span> <span class="kn">import</span> <span class="n">SignalsModel</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">YourModel</span><span class="p">(</span><span class="n">SignalsModel</span><span class="p">)</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">pre_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="soft-delete-signal-model">
+<h1>Soft Delete Signal Model<a class="headerlink" href="#soft-delete-signal-model" title="Link permanente para este título">¶</a></h1>
+<p>É o SignalsModel com soft delete implementado. Permite que nada que você apague seja realmente apagado do sistema e de facil recuperação</p>
+</div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div><!-- /row -->
+
+      <!-- row -->
+      <div class="row footer-relbar">
+<div id="navbar-related" class=" related navbar navbar-default" role="navigation" aria-label="related navigation">
+  <div class="navbar-inner">
+    <ul class="nav navbar-nav ">
+        <li><a href="index.html">documentação Django Models 0.2.1</a></li>
+    </ul>
+<ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
+      
+        <li><a href="index.html" title="Bem Vindo a documentação do Django Models" >anterior</a></li>
+        <li><a href="quickstart/installation.html" title="Installation" >próximo</a></li>
+        <li><a href="genindex.html" title="Índice Geral" >índice</a></li>
+        <li><a href="#">top</a></li> 
+      
+    </ul>
+  </div>
+</div>
+      </div><!-- /row -->
+
+      <!-- footer -->
+      <footer role="contentinfo">
+          &copy; Copyright 2021, Rafael Henter.
+        Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 3.4.3.
+      </footer>
+      <!-- /footer -->
+
+    </div>
+    <!-- /container -->
+
+  </body>
+</html>

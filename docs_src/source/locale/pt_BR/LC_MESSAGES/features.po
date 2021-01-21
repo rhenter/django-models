@@ -1,0 +1,148 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/features.rst:2
+msgid "Generic Models"
+msgstr ""
+
+#: ../../source/features.rst:5
+msgid "SerializerModel"
+msgstr ""
+
+#: ../../source/features.rst:7
+msgid ""
+"Model to return a dict with all data of your django instance without a "
+"serializer."
+msgstr ""
+"Modelo com o metodo serialize que retorna um dict com todas as informações "
+"da instância sem precisar de um serializador configurado."
+
+#: ../../source/features.rst:10
+msgid "Example:"
+msgstr "Exemplo:"
+
+#: ../../source/features.rst:12
+msgid "**Your Model**"
+msgstr "**Seus Modelo**"
+
+#: ../../source/features.rst:23
+msgid "**Usage**"
+msgstr "**Uso**"
+
+#: ../../source/features.rst:32
+msgid "SlugModel"
+msgstr ""
+
+#: ../../source/features.rst:34
+msgid "Model with a slug field. Useful to use in urls or nominal references"
+msgstr "Modelo com um campo slug. util para se usar em urls ou referencias nominais"
+
+#: ../../source/features.rst:36
+msgid "TimestampedModel"
+msgstr ""
+
+#: ../../source/features.rst:38
+msgid ""
+"Model with the DateTime, created_at and updated_at fields. Useful to "
+"control when any changes were made."
+msgstr ""
+"Modelo com os campos Datetime, created_at and updated_at. Uteis para "
+"controlar quando uma instancia foi criada ou aterada."
+
+#: ../../source/features.rst:40
+msgid "UUIDModel"
+msgstr ""
+
+#: ../../source/features.rst:42
+msgid ""
+"Model that uses the id field as a UUID. Useful to be able to have a "
+"unique identifier without worrying about sequences."
+msgstr ""
+"Modelo que usa o campo id como um UUID. Util para poder ter um identificador "
+"único sem se preocupar com sequenciais."
+
+#: ../../source/features.rst:45
+msgid "History Model"
+msgstr ""
+
+#: ../../source/features.rst:47
+msgid "History models"
+msgstr ""
+
+#: ../../source/features.rst:49
+msgid "Model that track each save to generate a History Changes of a record"
+msgstr "Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Historico de modificações da instância"
+
+#: ../../source/features.rst:52
+msgid "Signals Models"
+msgstr ""
+
+#: ../../source/features.rst:54
+msgid ""
+"With SignalModel it allows you to handle or execute an event according to"
+" Django's Signals."
+msgstr ""
+"Usando o SignalsModel, permite que você manipule ou execute um evento de "
+"acordo com os Signals do Django."
+
+#: ../../source/features.rst:58
+msgid "On Save:"
+msgstr "Ao Salvar"
+
+#: ../../source/features.rst:57
+msgid "pre_save (Before Saving)"
+msgstr "pre_save (Antes de Salvar)"
+
+#: ../../source/features.rst:58
+msgid "post_save (After saving)"
+msgstr "post_save (Depois de Salvar)"
+
+#: ../../source/features.rst:62
+msgid "On Erase:"
+msgstr "Ao Apagar"
+
+#: ../../source/features.rst:61
+msgid "pre_delete (Before Erasing)"
+msgstr "pre_delete (Antes de Apagar)"
+
+#: ../../source/features.rst:62
+msgid "post_delete (After Deleting)"
+msgstr "post_delete (Depois de Apagar)"
+
+#: ../../source/features.rst:64
+msgid "Example using Pre-save signal"
+msgstr "Examplo usando o signal Pre-save"
+
+#: ../../source/features.rst:66
+msgid "Note: This will be made before you save your model"
+msgstr ""
+
+#: ../../source/features.rst:80
+msgid "Soft Delete Signal Model"
+msgstr ""
+
+#: ../../source/features.rst:82
+msgid ""
+"It is the SignalsModel with soft delete implemented. Allows nothing you "
+"delete to be really deleted from the system and easy to recover"
+msgstr ""
+"É o SignalsModel com soft delete implementado. Permite que nada que você "
+"apague seja realmente apagado do sistema e de facil recuperação"
+

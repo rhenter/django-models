@@ -1,0 +1,50 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/index.rst:2
+msgid "Welcome to Django Models's documentation!"
+msgstr ""
+
+#: ../../source/index.rst:4
+msgid ""
+"Django Models is Library with several useful templates for Django to help"
+" you make your templates smart or with less code"
+msgstr ""
+
+#: ../../source/index.rst:7
+msgid "Features"
+msgstr ""
+
+#: ../../source/index.rst:15
+msgid "Quickstart"
+msgstr ""
+
+#: ../../source/index.rst:24
+msgid "User Guide"
+msgstr ""
+
+#: ../../source/index.rst:36
+msgid "Development"
+msgstr ""
+
+#: ../../source/index.rst:47
+msgid "Other"
+msgstr ""
+

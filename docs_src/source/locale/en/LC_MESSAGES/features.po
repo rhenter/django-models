@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Rafael Henter
+# This file is distributed under the same license as the Django Models
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2021.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Django Models 0.2.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.0\n"
+
+#: ../../source/features.rst:2
+msgid "Generic Models"
+msgstr ""
+
+#: ../../source/features.rst:5
+msgid "SerializerModel"
+msgstr ""
+
+#: ../../source/features.rst:7
+msgid ""
+"Model to return a dict with all data of your django instance without a "
+"serializer."
+msgstr ""
+
+#: ../../source/features.rst:10
+msgid "Example:"
+msgstr ""
+
+#: ../../source/features.rst:12
+msgid "**Your Model**"
+msgstr ""
+
+#: ../../source/features.rst:23
+msgid "**Usage**"
+msgstr ""
+
+#: ../../source/features.rst:32
+msgid "SlugModel"
+msgstr ""
+
+#: ../../source/features.rst:34
+msgid "Model with a slug field. Useful to use in urls or nominal references"
+msgstr ""
+
+#: ../../source/features.rst:36
+msgid "TimestampedModel"
+msgstr ""
+
+#: ../../source/features.rst:38
+msgid ""
+"Model with the DateTime, created_at and updated_at fields. Useful to "
+"control when any changes were made."
+msgstr ""
+
+#: ../../source/features.rst:40
+msgid "UUIDModel"
+msgstr ""
+
+#: ../../source/features.rst:42
+msgid ""
+"Model that uses the id field as a UUID. Useful to be able to have a "
+"unique identifier without worrying about sequences."
+msgstr ""
+
+#: ../../source/features.rst:45
+msgid "History Model"
+msgstr ""
+
+#: ../../source/features.rst:47
+msgid "History models"
+msgstr ""
+
+#: ../../source/features.rst:49
+msgid "Model that track each save to generate a History Changes of a record"
+msgstr ""
+
+#: ../../source/features.rst:52
+msgid "Signals Models"
+msgstr ""
+
+#: ../../source/features.rst:54
+msgid ""
+"With SignalModel it allows you to handle or execute an event according to"
+" Django's Signals."
+msgstr ""
+
+#: ../../source/features.rst:58
+msgid "On Save:"
+msgstr ""
+
+#: ../../source/features.rst:57
+msgid "pre_save (Before Saving)"
+msgstr ""
+
+#: ../../source/features.rst:58
+msgid "post_save (After saving)"
+msgstr ""
+
+#: ../../source/features.rst:62
+msgid "On Erase:"
+msgstr ""
+
+#: ../../source/features.rst:61
+msgid "pre_delete (Before Erasing)"
+msgstr ""
+
+#: ../../source/features.rst:62
+msgid "post_delete (After Deleting)"
+msgstr ""
+
+#: ../../source/features.rst:64
+msgid "Example using Pre-save signal"
+msgstr ""
+
+#: ../../source/features.rst:66
+msgid "Note: This will be made before you save your model"
+msgstr ""
+
+#: ../../source/features.rst:80
+msgid "Soft Delete Signal Model"
+msgstr ""
+
+#: ../../source/features.rst:82
+msgid ""
+"It is the SignalsModel with soft delete implemented. Allows nothing you "
+"delete to be really deleted from the system and easy to recover"
+msgstr ""
+
