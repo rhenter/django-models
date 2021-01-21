@@ -50,7 +50,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="Django Models 0.3.0 documentation" href="#" />
-    <link rel="next" title="Generic Models" href="features.html" /> 
+    <link rel="next" title="Installation" href="quickstart/installation.html" /> 
   </head>
   <body role="document">
     <div id="navbar-top" class="navbar navbar-fixed-top navbar-default" role="navigation" aria-label="top navigation">
@@ -71,7 +71,13 @@
                 <ul class="dropdown-menu localtoc sp-localtoc" role="menu" aria-labelledby="localToc">
                 <ul>
 <li><a class="reference internal" href="#">Welcome to Django Models’s documentation!</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#features">Features</a><ul>
+<li><a class="reference internal" href="#generic-models">Generic Models</a></li>
+<li><a class="reference internal" href="#history-model">History Model</a></li>
+<li><a class="reference internal" href="#signals-models">Signals Models</a></li>
+<li><a class="reference internal" href="#soft-delete-signal-model">Soft Delete Signal Model</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#user-guide">User Guide</a></li>
 <li><a class="reference internal" href="#development">Development</a></li>
@@ -84,7 +90,7 @@
               </li>
 
             
-              <li><a href="features.html" title="Generic Models" accesskey="N">next </a></li>
+              <li><a href="quickstart/installation.html" title="Installation" accesskey="N">next </a></li>
               <li><a href="genindex.html" title="General Index" accesskey="I">index </a></li>
             
             <li class="visible-xs"><a href="_sources/index.rst.txt" rel="nofollow">Show Source</a></li>
@@ -122,7 +128,13 @@
   <h3><a href="#">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Welcome to Django Models’s documentation!</a><ul>
-<li><a class="reference internal" href="#features">Features</a></li>
+<li><a class="reference internal" href="#features">Features</a><ul>
+<li><a class="reference internal" href="#generic-models">Generic Models</a></li>
+<li><a class="reference internal" href="#history-model">History Model</a></li>
+<li><a class="reference internal" href="#signals-models">Signals Models</a></li>
+<li><a class="reference internal" href="#soft-delete-signal-model">Soft Delete Signal Model</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#quickstart">Quickstart</a></li>
 <li><a class="reference internal" href="#user-guide">User Guide</a></li>
 <li><a class="reference internal" href="#development">Development</a></li>
@@ -132,8 +144,8 @@
 </ul>
 
   <h4>Next topic</h4>
-  <p class="topless"><a href="features.html"
-                        title="next chapter">Generic Models</a></p>
+  <p class="topless"><a href="quickstart/installation.html"
+                        title="next chapter">Installation</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -172,13 +184,80 @@
 <p>Django Models is Library with several useful Models for Django to help you make your templates smart or with less code</p>
 <div class="section" id="features">
 <h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
-<div class="toctree-wrapper compound">
+<div class="section" id="generic-models">
+<h3>Generic Models<a class="headerlink" href="#generic-models" title="Permalink to this headline">¶</a></h3>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="features.html">Generic Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html#history-model">History Model</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html#signals-models">Signals Models</a></li>
-<li class="toctree-l1"><a class="reference internal" href="features.html#soft-delete-signal-model">Soft Delete Signal Model</a></li>
+<li><p>SerializerModel</p>
+<p>Model to return a dict with all data of your django instance without a serializer.</p>
+</li>
 </ul>
+<p>Example:</p>
+<p><strong>Your Model</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_models.models</span> <span class="kn">import</span> <span class="n">SignalsModel</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">YourModel</span><span class="p">(</span><span class="n">SignalsModel</span><span class="p">)</span>
+    <span class="n">name</span> <span class="o">=</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">255</span><span class="p">)</span>
+    <span class="o">...</span>
+</pre></div>
+</div>
+<p><strong>Usage</strong></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span> <span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">YourModel</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">]:</span> <span class="n">instance</span> <span class="o">=</span> <span class="n">YourModel</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">first</span><span class="p">()</span>
+<span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">user</span><span class="o">.</span><span class="n">serialize</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="p">{</span><span class="s1">&#39;id&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;first record&#39;</span><span class="p">,</span> <span class="o">...</span><span class="p">}</span>
+</pre></div>
+</div>
+<ul>
+<li><p>SlugModel</p>
+<p>Model with a slug field. Useful to use in urls or nominal references</p>
+</li>
+<li><p>TimestampedModel</p>
+<p>Model with the DateTime, created_at and updated_at fields. Useful to control when any changes were made.</p>
+</li>
+<li><p>UUIDModel</p>
+<p>Model that uses the id field as a UUID. Useful to be able to have a unique identifier without worrying about sequences.</p>
+</li>
+</ul>
+</div>
+<div class="section" id="history-model">
+<h3>History Model<a class="headerlink" href="#history-model" title="Permalink to this headline">¶</a></h3>
+<ul>
+<li><p>History models</p>
+<p>Model that track each save to generate a History Changes of a record</p>
+</li>
+</ul>
+</div>
+<div class="section" id="signals-models">
+<h3>Signals Models<a class="headerlink" href="#signals-models" title="Permalink to this headline">¶</a></h3>
+<p>With SignalModel it allows you to handle or execute an event according to Django’s Signals.</p>
+<dl class="simple">
+<dt>On Save:</dt><dd><ul class="simple">
+<li><p>pre_save (Before Saving)</p></li>
+<li><p>post_save (After saving)</p></li>
+</ul>
+</dd>
+<dt>On Erase:</dt><dd><ul class="simple">
+<li><p>pre_delete (Before Erasing)</p></li>
+<li><p>post_delete (After Deleting)</p></li>
+</ul>
+</dd>
+</dl>
+<p>Example using Pre-save signal</p>
+<p>Note: This will be made before you save your model</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">django_models.models</span> <span class="kn">import</span> <span class="n">SignalsModel</span>
+<span class="o">...</span>
+
+<span class="k">class</span> <span class="nc">YourModel</span><span class="p">(</span><span class="n">SignalsModel</span><span class="p">)</span>
+    <span class="o">...</span>
+    <span class="k">def</span> <span class="nf">pre_save</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">do_something</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="soft-delete-signal-model">
+<h3>Soft Delete Signal Model<a class="headerlink" href="#soft-delete-signal-model" title="Permalink to this headline">¶</a></h3>
+<p>It is the SignalsModel with soft delete implemented. Allows nothing you delete to be really deleted from the system and easy to recover</p>
 </div>
 </div>
 <div class="section" id="quickstart">
@@ -273,7 +352,7 @@
     </ul>
 <ul class="nav navbar-nav pull-right hidden-xs hidden-sm">
       
-        <li><a href="features.html" title="Generic Models" >next</a></li>
+        <li><a href="quickstart/installation.html" title="Installation" >next</a></li>
         <li><a href="genindex.html" title="General Index" >index</a></li>
         <li><a href="#">top</a></li> 
       

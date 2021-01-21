@@ -1,7 +1,6 @@
 Generic Models
 ~~~~~~~~~~~~~~
 
-
 - SerializerModel
 
   Model to return a dict with all data of your django instance without a serializer.

@@ -6,9 +6,7 @@ Django Models is Library with several useful Models for Django to help you make 
 Features
 --------
 
-.. toctree::
-
-    features.rst
+.. include:: features.rst
 
 Quickstart
 ----------
