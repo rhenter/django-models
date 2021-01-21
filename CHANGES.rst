@@ -1,5 +1,10 @@
 Changelog
 =========
+0.3.0
+~~~~~
+
+- Use new documentation on GitHub Pages
+
 0.2.1
 ~~~~~
 
