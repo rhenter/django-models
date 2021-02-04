@@ -9,7 +9,7 @@ from rest_framework.serializers import ModelSerializer
 from django_models.fields import UUIDPrimaryKeyField
 from django_models.utils.generators import generate_random_code
 
-generate_code = partial(generate_random_code, length=16)
+generate_code = partial(generate_random_code, length=8)
 
 
 class BaseModel(models.Model):

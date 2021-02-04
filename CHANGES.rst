@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.0
+~~~~~
+
+- Change Default code size to 8 on CodeModel
+
 0.3.0
 ~~~~~
 
