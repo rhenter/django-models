@@ -39,10 +39,10 @@ Example:
 
 .. code-block:: python
 
-    from django_models.models import SignalsModel
+    from django_models.models import SerializerModel
     ...
 
-    class YourModel(SignalsModel)
+    class YourModel(SerializerModel)
         name = models.CharField(max_length=255)
         ...
 
