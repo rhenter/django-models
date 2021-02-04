@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Django Models 0.2.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-21 12:29-0300\n"
+"POT-Creation-Date: 2021-02-04 15:23-0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,30 +23,54 @@ msgid "Changelog"
 msgstr ""
 
 #: ../../../CHANGES.rst:4
-msgid "0.2.1"
+msgid "0.4.1"
 msgstr ""
 
 #: ../../../CHANGES.rst:6
-msgid "Fix typo"
+msgid "Corrected import / inherited model class"
 msgstr ""
 
 #: ../../../CHANGES.rst:9
-msgid "0.2.0"
+msgid "0.4.0"
 msgstr ""
 
 #: ../../../CHANGES.rst:11
+msgid "Change Default code size to 8 on CodeModel"
+msgstr ""
+
+#: ../../../CHANGES.rst:14
+msgid "0.3.0"
+msgstr ""
+
+#: ../../../CHANGES.rst:16
+msgid "Use new documentation on GitHub Pages"
+msgstr ""
+
+#: ../../../CHANGES.rst:19
+msgid "0.2.1"
+msgstr ""
+
+#: ../../../CHANGES.rst:21
+msgid "Fix typo"
+msgstr ""
+
+#: ../../../CHANGES.rst:24
+msgid "0.2.0"
+msgstr ""
+
+#: ../../../CHANGES.rst:26
 msgid "Update documentation"
 msgstr ""
 
-#: ../../../CHANGES.rst:12
+#: ../../../CHANGES.rst:27
 msgid "Translate the documentation to Portuguese"
 msgstr ""
 
-#: ../../../CHANGES.rst:15
+#: ../../../CHANGES.rst:30
 msgid "0.1.0"
 msgstr ""
 
-#: ../../../CHANGES.rst:17
+#: ../../../CHANGES.rst:32
 msgid "Start a new from Project from Django Stuff"
 msgstr ""
 

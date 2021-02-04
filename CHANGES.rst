@@ -1,5 +1,10 @@
 Changelog
 =========
+0.4.1
+~~~~~
+
+- Corrected import / inherited model class
+
 0.4.0
 ~~~~~
 
