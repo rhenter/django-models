@@ -39,7 +39,8 @@ class SignalsModel(SerializerModel):
         with transaction.atomic():
             self.trigger_event('pre_save', context)
             super().save(*args, **kwargs)
-            self.trigger_event('post_save', context)
+
+        self.trigger_event('post_save', context)
 
     def delete(self, *args, **kwargs):
         context = self.get_context()

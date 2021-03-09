@@ -1,5 +1,10 @@
 Changelog
 =========
+0.5.0
+~~~~~
+
+- Move post_save to outside of the transaction on the Signal Model
+
 0.4.1
 ~~~~~
 
