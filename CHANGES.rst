@@ -1,5 +1,10 @@
 Changelog
 =========
+0.5.1
+~~~~~
+
+- Expose/Export SoftDeleteSignalModel Model
+
 0.5.0
 ~~~~~
 
