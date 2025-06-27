@@ -34,8 +34,8 @@ jobs:
       run: |
         cd test-django-project && py.test -vvv -s --cov django_models --cov-report=term-missing --cov-report=html
 
-    - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+    - name: Upload test results to Codecov
+      if: ${{ !cancelled() }}
+      uses: codecov/test-results-action@v1
       with:
-        file: ./test-django-project/.coverage
-        name: codecov-umbrella
+        token: ${{ secrets.CODECOV_TOKEN }}
