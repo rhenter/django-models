@@ -1,8 +1,7 @@
-import pytest
+import codecs
 import os
 import tempfile
-import codecs
-from pathlib import Path
+
 from django_models.utils.generic import find_path, get_version_from_changes
 
 

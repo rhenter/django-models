@@ -1,5 +1,6 @@
-import pytest
 from uuid import UUID
+
+import pytest
 
 from django_models.models.exceptions import HistoryModelNotSetError
 from testapp.models import (

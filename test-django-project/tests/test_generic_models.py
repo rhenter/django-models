@@ -1,7 +1,8 @@
-import pytest
 from uuid import UUID
-from django.test import TestCase
+
+import pytest
 from django.db import models
+
 from django_models.models.generic import UUIDModel
 from testapp.models import (
     TestSortOrderModel,

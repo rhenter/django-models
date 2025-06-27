@@ -1,13 +1,10 @@
 from django.db import models
 
+from django_models.fields import CharFieldDigitsOnly
 from django_models.models import (
-    UUIDModel,
     HistoryModel,
     SignalsModel,
-    TimestampedModel,
-    SerializerModel,
 )
-from django_models.fields import CharFieldDigitsOnly
 from django_models.models.generic import (
     SortOrderModel,
     SerializerModel,

@@ -1,6 +1,6 @@
-import pytest
 import uuid
 
+import pytest
 from django.forms import ValidationError
 
 from testapp.models import SampleModel, SampleDigitsOnlyField

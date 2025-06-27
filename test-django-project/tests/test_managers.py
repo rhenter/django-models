@@ -1,7 +1,5 @@
 import pytest
-from django.test import TestCase
-from django.db import models
-from django.utils import timezone
+
 from django_models.models.managers import SoftDeleteSignalsManager
 from testapp.models import TestSignalsModel, TestSoftDeleteModel
 

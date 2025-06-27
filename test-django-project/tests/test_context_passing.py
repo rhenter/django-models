@@ -1,4 +1,5 @@
 import pytest
+
 from testapp.models import SampleSignalsModel
 
 pytestmark = pytest.mark.django_db

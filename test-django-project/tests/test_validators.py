@@ -1,4 +1,3 @@
-import pytest
 from django_models.validators import dv_maker, validate_cpf, validate_cnpj, SEQ_VALUES
 
 

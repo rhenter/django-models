@@ -1,6 +1,6 @@
 import pytest
-
 from django.forms import ValidationError
+
 from django_models.forms import CNPJField, CPFField
 
 
