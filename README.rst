@@ -6,12 +6,12 @@ Django Models
 
 |PyPI latest| |PyPI Version| |PyPI License|  |GitHub Actions Status| |Coverage| |Docs| |Open Source? Yes!|
 
-Django Models is Library with several useful Models for Django to help you make your templates smart or with less code
+Django Models is a Library with several useful Models for Django to help you make your templates smart or with less code
 
 Requirements
 ============
 
-- Python 3.x
+- Python 3.8 or later
 - Django 1.11 or later
 
 Features
@@ -70,20 +70,20 @@ Example:
 History models
 --------------
 
-- History Model
-  Model that track each save to generate a History Changes of a record
+- HistoryModel
+  Model that tracks each save to generate a Change History of a record
 
 Signals Models
 --------------
 
-With SignalModel it allows you to handle or execute an event according to Django's Signals.
+With SignalsModel it allows you to handle or execute an event according to Django's Signals.
 
 On Save:
   - pre_save (Before Saving)
-  - post_save (After saving)
+  - post_save (After Saving)
 
-On Erase:
-  - pre_delete (Before Erasing)
+On Delete:
+  - pre_delete (Before Deleting)
   - post_delete (After Deleting)
 
 Example using Pre-save signal
@@ -105,7 +105,7 @@ Soft Delete Signal Model
 
 - SoftDeleteSignalModel Models
 
-  It is the SignalsModel with soft delete implemented. Allows nothing you delete to be really deleted from the system and easy to recover
+  It is the SignalsModel with soft delete implemented. Ensures that nothing you delete is really deleted from the system and easy to recover
 
 
 How to install

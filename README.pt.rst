@@ -9,7 +9,7 @@ Django Models é uma biblioteca com vários Modelos úteis para Django para ajud
 Requirements
 ============
 
-- Python 3.x
+- Python 3.8 ou mais novo
 - Django 1.11 ou mais novo
 
 Features
@@ -24,18 +24,18 @@ Generic Models
 
 - CodeModel
 
-  Modelo com um campo code que gera automaticamente um hash de 16 caracteres por padrão. Muito util para identificar seu registro de forma mais humanizada
+  Modelo com um campo code que gera automaticamente um hash de 16 caracteres por padrão. Muito útil para identificar seu registro de forma mais humanizada
 
 History models
 --------------
 
 - HistoryModel
 
-  Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Historico de modificações da instância
+  Modelo que permite rastrear cada alteração feita na instância ao salvar para gerar um Histórico de modificações da instância
 
 - SerializerModel
 
-  Modelo com o metodo serialize que retorna um dict com todas as informações da instância sem precisar de um serializador configurado.
+  Modelo com o método serialize que retorna um dict com todas as informações da instância sem precisar de um serializador configurado.
 
 .. code-block:: python
 
@@ -57,15 +57,15 @@ History models
 
 - SlugModel
 
-  Modelo com um campo slug. util para se usar em urls ou referencias nominais
+  Modelo com um campo slug. Útil para se usar em urls ou referências nominais
 
 - TimestampedModel
 
-  Modelo com os campos Datetime, created_at and updated_at. Uteis para controlar quando uma instancia foi criada ou aterada.
+  Modelo com os campos Datetime, created_at and updated_at. Úteis para controlar quando uma instância foi criada ou alterada.
 
 - UUIDModel
 
-  Modelo que usa o campo id como um UUID. Util para poder ter um identificador único sem se preocupar com sequenciais.
+  Modelo que usa o campo id como um UUID. Útil para poder ter um identificador único sem se preocupar com sequenciais.
 
 
 Signals Models
@@ -83,7 +83,7 @@ Quando Apagar:
  - pre_delete (Antes de Apagar)
  - post_delete (Depois de Apagar)
 
-Examplo usando o signal Pre-save
+Exemplo usando o signal Pre-save
 
 .. code-block:: python
 
@@ -101,13 +101,13 @@ Soft Delete Signal Model
 
 - SoftDeleteSignalModel Models
 
-  É o SignalsModel com soft delete implementado. Permite que nada que você apague seja realmente apagado do sistema e de facil recuperação
+  É o SignalsModel com soft delete implementado. Permite que nada que você apague seja realmente apagado do sistema e de fácil recuperação
 
 
 Como Instalar
 =============
 
-Vamos la!
+Vamos lá!
 ---------
 
 Você pode instalar o Django Models usando pip:
@@ -117,7 +117,7 @@ Você pode instalar o Django Models usando pip:
     $ pip install django-models
 
 
-Se preferir instalar usando o codigo, pegue o endereço do repositorio git do GitHub e rode o setup.py
+Se preferir instalar usando o código, pegue o endereço do repositório git do GitHub e rode o setup.py
 
 .. code:: shell
 
@@ -146,7 +146,7 @@ Para habilitar o `django_models` no seu projeto você precisa adiciona-lo ao `IN
 Documentação
 ============
 
-Confira a ultima versão da documento do ``django-models`` em `GitHub Pages <https://rhenter.github.io/django-models/>`_
+Confira a última versão da documentação do ``django-models`` em `GitHub Pages <https://rhenter.github.io/django-models/>`_
 
 Contribuição
 ============
@@ -154,7 +154,7 @@ Contribuição
 Por favor envie pull requests, são muito apreciados.
 
 
-1. Faço o Fork do repositorio `repository <https://github.com/rhenter/django_models>`_ no GitHub.
+1. Faça o Fork do repositório `repository <https://github.com/rhenter/django_models>`_ no GitHub.
 2. Crie uma branch fora da master e commit as suas modificações.
 3. Instale as dependências. ``pip install -r requirements-dev.txt``
 4. Instale o pre-commit. ``pre-commit install``

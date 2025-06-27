@@ -12,10 +12,10 @@ Example:
 
 .. code-block:: python
 
-    from django_models.models import SignalsModel
+    from django_models.models import SerializerModel
     ...
 
-    class YourModel(SignalsModel)
+    class YourModel(SerializerModel)
         name = models.CharField(max_length=255)
         ...
 
@@ -45,19 +45,19 @@ History Model
 
 - History models
 
-  Model that track each save to generate a History Changes of a record
+  Model that tracks each save to generate a Change History of a record
 
 Signals Models
 ~~~~~~~~~~~~~~
 
-With SignalModel it allows you to handle or execute an event according to Django's Signals.
+With SignalsModel it allows you to handle or execute an event according to Django's Signals.
 
 On Save:
   - pre_save (Before Saving)
-  - post_save (After saving)
+  - post_save (After Saving)
 
-On Erase:
-  - pre_delete (Before Erasing)
+On Delete:
+  - pre_delete (Before Deleting)
   - post_delete (After Deleting)
 
 Example using Pre-save signal
@@ -78,5 +78,4 @@ Note: This will be made before you save your model
 Soft Delete Signal Model
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-It is the SignalsModel with soft delete implemented. Allows nothing you delete to be really deleted from the system and easy to recover
-
+It is the SignalsModel with soft delete implemented. Ensures that nothing you delete is really deleted from the system and easy to recover

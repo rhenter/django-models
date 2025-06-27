@@ -1,7 +1,7 @@
 Welcome to Django Models's documentation!
 =========================================
 
-Django Models is Library with several useful Models for Django to help you make your templates smart or with less code
+Django Models is a Library with several useful Models for Django to help you make your templates smart or with less code
 
 Features
 --------
