@@ -1,6 +1,7 @@
 import codecs
 import os
 import re
+from typing import List
 
 from setuptools import setup, find_packages, Command
 from django_models.utils import get_version_from_changes
@@ -10,7 +11,8 @@ version = get_version_from_changes(here)
 
 
 # Save last Version
-def save_version():
+def save_version() -> None:
+    """Save the current version to the version.py file."""
     version_path = os.path.join(here, "django_models/version.py")
 
     with open(version_path) as version_file_read:
@@ -18,6 +20,8 @@ def save_version():
 
     VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
     mo = re.search(VSRE, content_file, re.M)
+    if mo is None:
+        raise ValueError("Version pattern not found in version.py")
     current_version = mo.group(1)
 
     content_file = content_file.replace(current_version, "{}".format(version))
@@ -42,16 +46,20 @@ with codecs.open(os.path.join(here, 'requirements.txt')) as f:
 
 
 class VersionCommand(Command):
+    """Custom command to print the library version."""
     description = 'print library version'
-    user_options = []
+    user_options: List = []
 
-    def initialize_options(self):
+    def initialize_options(self) -> None:
+        """Initialize command options."""
         pass
 
-    def finalize_options(self):
+    def finalize_options(self) -> None:
+        """Finalize command options."""
         pass
 
-    def run(self):
+    def run(self) -> None:
+        """Run the version command."""
         print(version)
 
 
@@ -64,13 +72,14 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
+        'Programming Language :: Python :: 3.11',
+        'Programming Language :: Python :: 3.12',
         'Topic :: Software Development :: Libraries',
+        'Topic :: Software Development :: Libraries :: Python Modules',
+        'Typing :: Typed',
     ],
     cmdclass={'version': VersionCommand},
     description='Library with several useful Models for Django to help you make your Models smart or with less code',
