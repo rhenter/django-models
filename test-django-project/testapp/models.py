@@ -4,11 +4,11 @@ from django_models.models import UUIDModel, HistoryModel, SignalsModel, Timestam
 from django_models.fields import CharFieldDigitsOnly
 
 
-class TestModel(UUIDModel, TimestampedModel, SerializerModel):
+class SampleModel(UUIDModel, TimestampedModel, SerializerModel):
     name = models.CharField(max_length=128)
 
 
-class TestSignalsModel(SignalsModel, UUIDModel):
+class SampleSignalsModel(SignalsModel, UUIDModel):
     name = models.CharField(max_length=128)
 
     def __init__(self, *args, **kwargs):
@@ -43,21 +43,72 @@ class TestSignalsModel(SignalsModel, UUIDModel):
 
 
 class HistoryTestModel(UUIDModel):
-    parent = models.ForeignKey('TestHistoryModel', related_name='history', on_delete=models.CASCADE)
+    parent = models.ForeignKey('SampleHistoryModel', related_name='history', on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
     email = models.CharField(max_length=32, default='example@example.com')
 
 
-class TestHistoryModel(HistoryModel, SignalsModel):
+class SampleHistoryModel(HistoryModel, SignalsModel):
     history_model = HistoryTestModel
     name = models.CharField(max_length=128)
     email = models.CharField(max_length=32, default='example@example.com')
     description = models.CharField(max_length=32, default='Lorem Ipsum', blank=True)
 
 
-class TestHistoryFail(HistoryModel):
+class SampleHistoryFail(HistoryModel):
     name = models.CharField(max_length=128)
 
 
-class TestDigitsOnlyField(models.Model):
+class SampleDigitsOnlyField(models.Model):
     digits_only_field = CharFieldDigitsOnly(max_length=5)
+
+
+# Test models for coverage tests
+from django_models.models.generic import (
+    SortOrderModel, SerializerModel, UUIDModel, CodeModel, 
+    SlugModel, ActiveModel, TimestampedModel
+)
+from django_models.models.managers import SignalsManager, SoftDeleteSignalsManager
+
+
+class TestSortOrderModel(SortOrderModel):
+    name = models.CharField(max_length=100)
+
+
+class TestSerializerModel(SerializerModel):
+    name = models.CharField(max_length=100)
+
+
+class TestUUIDSerializerModel(SerializerModel, UUIDModel):
+    name = models.CharField(max_length=100)
+
+
+class TestCodeModel(CodeModel):
+    name = models.CharField(max_length=100)
+
+
+class TestSlugModel(SlugModel):
+    name = models.CharField(max_length=100)
+
+
+class TestActiveModel(ActiveModel):
+    name = models.CharField(max_length=100)
+
+
+class TestTimestampedModel(TimestampedModel):
+    name = models.CharField(max_length=100)
+
+
+class TestSignalsModel(models.Model):
+    name = models.CharField(max_length=100)
+
+    objects = SignalsManager()
+
+
+class TestSoftDeleteModel(models.Model):
+    name = models.CharField(max_length=100)
+    is_deleted = models.BooleanField(default=False)
+    deleted_at = models.DateTimeField(null=True, blank=True)
+
+    objects = SoftDeleteSignalsManager()
+    all_objects = SoftDeleteSignalsManager(show_deleted=True)
