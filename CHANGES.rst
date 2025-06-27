@@ -1,5 +1,13 @@
 Changelog
 =========
+1.0
+~~~
+
+- Fixed Django 5 compatibility issues
+- Updated requirements to Django 5.0+
+- Fixed broken tests with pytest
+- Updated documentation
+
 0.5.1
 ~~~~~
 
