@@ -1,0 +1,9 @@
+[run]
+source = django_models
+
+[report]
+omit =
+    */tests/*
+    */.venv/*
+    */.virtualenvs/*
+    */__init__.py
