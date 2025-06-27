@@ -174,7 +174,7 @@ Please send pull requests, very much appreciated.
 .. |PyPI latest| image:: https://img.shields.io/pypi/v/django-models.svg?maxAge=120
    :target: https://pypi.python.org/pypi/django-models
 .. |GitHub Actions Status| image:: https://github.com/rhenter/django-models/workflows/Tests/badge.svg
-   :target: https://github.com/rhenter/django-models/actions
+   :target: https://github.com/rhenter/django-models/actions/workflows/ci.yml
 .. |Coverage| image:: https://codecov.io/gh/rhenter/django-models/branch/master/graph/badge.svg
    :target: https://codecov.io/gh/rhenter/django-models
 .. |Open Source? Yes!| image:: https://badgen.net/badge/Open%20Source%20%3F/Yes%21/blue?icon=github
