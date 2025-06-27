@@ -1,13 +1,12 @@
-import pytest
-import hashlib
 import time
 from datetime import datetime
+
 from django_models.utils.generators import (
     generate_random_code,
     generate_md5_hashcode,
     generate_datetime,
     generate_cpf,
-    generate_cnpj
+    generate_cnpj,
 )
 
 
@@ -39,7 +38,7 @@ class TestGenerateMd5Hashcode:
         keyword = "test"
         hashcode = generate_md5_hashcode(keyword)
         assert len(hashcode) == 32  # MD5 hash is 32 characters
-        assert all(c in '0123456789abcdef' for c in hashcode)
+        assert all(c in "0123456789abcdef" for c in hashcode)
 
     def test_generate_md5_hashcode_different_keywords(self):
         """Test that different keywords generate different hashes."""
@@ -89,12 +88,12 @@ class TestGenerateCpf:
         """Test that generated CPF has correct format."""
         cpf = generate_cpf()
         assert len(cpf) == 14  # XXX.XXX.XXX-XX format
-        assert cpf[3] == '.'
-        assert cpf[7] == '.'
-        assert cpf[11] == '-'
+        assert cpf[3] == "."
+        assert cpf[7] == "."
+        assert cpf[11] == "-"
 
         # Remove formatting and check if all digits
-        digits = cpf.replace('.', '').replace('-', '')
+        digits = cpf.replace(".", "").replace("-", "")
         assert len(digits) == 11
         assert digits.isdigit()
 
@@ -107,7 +106,7 @@ class TestGenerateCpf:
     def test_generate_cpf_valid_structure(self):
         """Test that generated CPF has valid digit structure."""
         cpf = generate_cpf()
-        digits = cpf.replace('.', '').replace('-', '')
+        digits = cpf.replace(".", "").replace("-", "")
 
         # Basic validation - should have 11 digits
         assert len(digits) == 11
@@ -121,13 +120,13 @@ class TestGenerateCnpj:
         """Test that generated CNPJ has correct format."""
         cnpj = generate_cnpj()
         assert len(cnpj) == 18  # XX.XXX.XXX/XXXX-XX format
-        assert cnpj[2] == '.'
-        assert cnpj[6] == '.'
-        assert cnpj[10] == '/'
-        assert cnpj[15] == '-'
+        assert cnpj[2] == "."
+        assert cnpj[6] == "."
+        assert cnpj[10] == "/"
+        assert cnpj[15] == "-"
 
         # Remove formatting and check if all digits
-        digits = cnpj.replace('.', '').replace('/', '').replace('-', '')
+        digits = cnpj.replace(".", "").replace("/", "").replace("-", "")
         assert len(digits) == 14
         assert digits.isdigit()
 
@@ -140,7 +139,7 @@ class TestGenerateCnpj:
     def test_generate_cnpj_valid_structure(self):
         """Test that generated CNPJ has valid digit structure."""
         cnpj = generate_cnpj()
-        digits = cnpj.replace('.', '').replace('/', '').replace('-', '')
+        digits = cnpj.replace(".", "").replace("/", "").replace("-", "")
 
         # Basic validation - should have 14 digits
         assert len(digits) == 14

@@ -6,16 +6,16 @@ from .utils.string import digits_only
 
 # Sequential values that are invalid for CPF validation
 SEQ_VALUES: List[str] = [
-    '00000000000',
-    '11111111111',
-    '22222222222',
-    '33333333333',
-    '44444444444',
-    '55555555555',
-    '66666666666',
-    '77777777777',
-    '88888888888',
-    '99999999999'
+    "00000000000",
+    "11111111111",
+    "22222222222",
+    "33333333333",
+    "44444444444",
+    "55555555555",
+    "66666666666",
+    "77777777777",
+    "88888888888",
+    "99999999999",
 ]
 
 
@@ -46,7 +46,7 @@ def validate_cpf(value: str) -> Union[str, bool]:
     the verification digits.
 
     Args:
-        value: CPF number as a string. Can be in the format XXX.XXX.XXX-XX 
+        value: CPF number as a string. Can be in the format XXX.XXX.XXX-XX
                or as an 11-digit number string.
 
     Returns:
@@ -109,7 +109,7 @@ def validate_cnpj(value: str) -> Union[str, bool]:
     the verification digits.
 
     Args:
-        value: CNPJ number as a string. Can be in the format XX.XXX.XXX/XXXX-XX 
+        value: CNPJ number as a string. Can be in the format XX.XXX.XXX/XXXX-XX
                or as a 14-digit number string.
 
     Returns:
@@ -124,7 +124,7 @@ def validate_cnpj(value: str) -> Union[str, bool]:
         False
     """
     if value in EMPTY_VALUES:
-        return ''
+        return ""
 
     orig_value = value[:]
     if not value.isdigit():

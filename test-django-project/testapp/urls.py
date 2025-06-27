@@ -1,4 +1,2 @@
-
-app_name = 'testapp'
-urlpatterns = [
-]
+app_name = "testapp"
+urlpatterns = []

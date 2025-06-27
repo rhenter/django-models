@@ -1,5 +1,5 @@
 import uuid
-from typing import Any, Optional
+from typing import Any
 
 from django.core.validators import RegexValidator
 from django.db import models
@@ -12,7 +12,7 @@ class UUIDPrimaryKeyField(models.UUIDField):
 
     This field automatically configures itself as:
     - primary_key=True
-    - unique=True  
+    - unique=True
     - editable=False
 
     It generates a UUID4 value automatically when the model instance is saved
@@ -27,9 +27,9 @@ class UUIDPrimaryKeyField(models.UUIDField):
             *args: Variable length argument list passed to parent class
             **kwargs: Arbitrary keyword arguments passed to parent class
         """
-        kwargs['primary_key'] = True
-        kwargs['unique'] = True
-        kwargs['editable'] = False
+        kwargs["primary_key"] = True
+        kwargs["unique"] = True
+        kwargs["editable"] = False
         super().__init__(*args, **kwargs)
 
     def pre_save(self, model_instance: Model, add: bool) -> uuid.UUID:
@@ -56,13 +56,13 @@ class CharFieldDigitsOnly(models.CharField):
     """
     A CharField that only accepts digits and whitespace characters.
 
-    This field validates that the input contains only digits (0-9) and 
+    This field validates that the input contains only digits (0-9) and
     whitespace characters. It's useful for fields like phone numbers,
     postal codes, or other numeric identifiers that may contain spaces.
     """
+
     default_validators = [
         RegexValidator(
-            r'^([\s\d]+)$', 
-            'Only digits and whitespace characters are allowed.'
+            r"^([\s\d]+)$", "Only digits and whitespace characters are allowed."
         )
     ]

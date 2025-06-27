@@ -24,9 +24,8 @@ class SoftDeleteQuerySet(QuerySet):
 
     def hard_delete(self):
         """Delete the records in the current QuerySet."""
-        self._not_support_combined_queries('delete')
-        assert not self.query.is_sliced, \
-            "Cannot use 'limit' or 'offset' with delete."
+        self._not_support_combined_queries("delete")
+        assert not self.query.is_sliced, "Cannot use 'limit' or 'offset' with delete."
 
         if self._fields is not None:
             raise TypeError("Cannot call delete() after .values() or .values_list()")
@@ -55,15 +54,15 @@ class SoftDeleteQuerySet(QuerySet):
         return super().update(deleted_at=None, is_deleted=False)
 
     def __repr__(self):
-        data = list(self[:REPR_OUTPUT_SIZE + 1])
+        data = list(self[: REPR_OUTPUT_SIZE + 1])
         if len(data) > REPR_OUTPUT_SIZE:
             data[-1] = "...(remaining elements truncated)..."
-        return '<QuerySet %r>' % data
+        return "<QuerySet %r>" % data
 
 
 class SoftDeleteSignalsManager(SignalsManager):
     def __init__(self, *args, **kwargs):
-        self.show_deleted = kwargs.pop('show_deleted', False)
+        self.show_deleted = kwargs.pop("show_deleted", False)
         super().__init__(*args, **kwargs)
 
     def get_queryset(self):
@@ -81,7 +80,7 @@ class SoftDeleteSignalsManager(SignalsManager):
         return self.get_queryset().restore()
 
     def filter(self, *args, **kwargs):
-        if 'is_deleted' in kwargs:
+        if "is_deleted" in kwargs:
             qs = SoftDeleteQuerySet(self.model, using=self._db)
             return qs.filter(*args, **kwargs)
         return super().filter(*args, **kwargs)

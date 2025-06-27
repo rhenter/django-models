@@ -75,7 +75,7 @@ def remove_special_characters(text: str) -> str:
         >>> remove_special_characters("Test@123#")
         "Test123"
     """
-    cleaned_text = re.sub(r'([^\s\w]|_)+', '', text.strip())
+    cleaned_text = re.sub(r"([^\s\w]|_)+", "", text.strip())
     return remove_accents(cleaned_text)
 
 
@@ -99,5 +99,6 @@ def remove_accents(text: str) -> str:
         >>> remove_accents("naïve")
         "naive"
     """
-    return ''.join(c for c in unicodedata.normalize('NFD', text)
-                   if unicodedata.category(c) != 'Mn')
+    return "".join(
+        c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn"
+    )

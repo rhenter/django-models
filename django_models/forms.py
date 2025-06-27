@@ -1,4 +1,4 @@
-from typing import Any, Tuple, Union
+from typing import Any, Tuple
 from django.forms import ValidationError
 from django.forms.fields import CharField
 from django.utils.translation import gettext_lazy as _
@@ -17,6 +17,7 @@ class InvalidValuesField:
     Attributes:
         invalid_values: A tuple of values that are considered invalid for this field.
     """
+
     invalid_values: Tuple[str, ...] = ()
 
     def clean(self, value: str) -> str:
@@ -49,9 +50,12 @@ class CPFField(InvalidValuesField, CharField):
     Attributes:
         invalid_values: Tuple of known invalid CPF values that should be rejected
     """
-    invalid_values: Tuple[str, ...] = ('00000000191',)
 
-    def __init__(self, max_length: int = 14, min_length: int = 11, *args: Any, **kwargs: Any) -> None:
+    invalid_values: Tuple[str, ...] = ("00000000191",)
+
+    def __init__(
+        self, max_length: int = 14, min_length: int = 11, *args: Any, **kwargs: Any
+    ) -> None:
         """
         Initialize the CPF field.
 
@@ -94,13 +98,22 @@ class CNPJField(InvalidValuesField, CharField):
     Attributes:
         invalid_values: Tuple of known invalid CNPJ values that should be rejected
     """
+
     invalid_values: Tuple[str, ...] = (
-        '00000000000000', '22222222000191', '33333333000191', '44444444000191',
-        '55555555000191', '66666666000191', '77777777000191', '88888888000191',
-        '99999999000191'
+        "00000000000000",
+        "22222222000191",
+        "33333333000191",
+        "44444444000191",
+        "55555555000191",
+        "66666666000191",
+        "77777777000191",
+        "88888888000191",
+        "99999999000191",
     )
 
-    def __init__(self, min_length: int = 14, max_length: int = 18, *args: Any, **kwargs: Any) -> None:
+    def __init__(
+        self, min_length: int = 14, max_length: int = 18, *args: Any, **kwargs: Any
+    ) -> None:
         """
         Initialize the CNPJ field.
 

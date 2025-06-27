@@ -1,7 +1,23 @@
 from django.db import models
 
-from django_models.models import UUIDModel, HistoryModel, SignalsModel, TimestampedModel, SerializerModel
+from django_models.models import (
+    UUIDModel,
+    HistoryModel,
+    SignalsModel,
+    TimestampedModel,
+    SerializerModel,
+)
 from django_models.fields import CharFieldDigitsOnly
+from django_models.models.generic import (
+    SortOrderModel,
+    SerializerModel,
+    UUIDModel,
+    CodeModel,
+    SlugModel,
+    ActiveModel,
+    TimestampedModel,
+)
+from django_models.models.managers import SignalsManager, SoftDeleteSignalsManager
 
 
 class SampleModel(UUIDModel, TimestampedModel, SerializerModel):
@@ -15,44 +31,46 @@ class SampleSignalsModel(SignalsModel, UUIDModel):
         super().__init__(*args, **kwargs)
 
         self.debug_info = {
-            'pre_save_handler_called': 0,
-            'post_save_handler_called': 0,
-            'pre_update_handler_called': 0,
-            'post_update_handler_called': 0,
-            'pre_delete_handler_called': 0,
-            'post_delete_handler_called': 0
+            "pre_save_handler_called": 0,
+            "post_save_handler_called": 0,
+            "pre_update_handler_called": 0,
+            "post_update_handler_called": 0,
+            "pre_delete_handler_called": 0,
+            "post_delete_handler_called": 0,
         }
 
     def pre_save(self, context):
-        self.debug_info['pre_save_handler_called'] += 1
+        self.debug_info["pre_save_handler_called"] += 1
 
     def post_save(self, context):
-        self.debug_info['post_save_handler_called'] += 1
+        self.debug_info["post_save_handler_called"] += 1
 
     def pre_update(self, context):
-        self.debug_info['pre_update_handler_called'] += 1
+        self.debug_info["pre_update_handler_called"] += 1
 
     def post_update(self, context):
-        self.debug_info['post_update_handler_called'] += 1
+        self.debug_info["post_update_handler_called"] += 1
 
     def pre_delete(self, context):
-        self.debug_info['pre_delete_handler_called'] += 1
+        self.debug_info["pre_delete_handler_called"] += 1
 
     def post_delete(self, context):
-        self.debug_info['post_delete_handler_called'] += 1
+        self.debug_info["post_delete_handler_called"] += 1
 
 
 class HistoryTestModel(UUIDModel):
-    parent = models.ForeignKey('SampleHistoryModel', related_name='history', on_delete=models.CASCADE)
+    parent = models.ForeignKey(
+        "SampleHistoryModel", related_name="history", on_delete=models.CASCADE
+    )
     name = models.CharField(max_length=128)
-    email = models.CharField(max_length=32, default='example@example.com')
+    email = models.CharField(max_length=32, default="example@example.com")
 
 
 class SampleHistoryModel(HistoryModel, SignalsModel):
     history_model = HistoryTestModel
     name = models.CharField(max_length=128)
-    email = models.CharField(max_length=32, default='example@example.com')
-    description = models.CharField(max_length=32, default='Lorem Ipsum', blank=True)
+    email = models.CharField(max_length=32, default="example@example.com")
+    description = models.CharField(max_length=32, default="Lorem Ipsum", blank=True)
 
 
 class SampleHistoryFail(HistoryModel):
@@ -61,14 +79,6 @@ class SampleHistoryFail(HistoryModel):
 
 class SampleDigitsOnlyField(models.Model):
     digits_only_field = CharFieldDigitsOnly(max_length=5)
-
-
-# Test models for coverage tests
-from django_models.models.generic import (
-    SortOrderModel, SerializerModel, UUIDModel, CodeModel, 
-    SlugModel, ActiveModel, TimestampedModel
-)
-from django_models.models.managers import SignalsManager, SoftDeleteSignalsManager
 
 
 class TestSortOrderModel(SortOrderModel):

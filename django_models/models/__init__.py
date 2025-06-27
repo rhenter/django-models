@@ -3,6 +3,11 @@ from .signals import SignalsModel, SoftDeleteSignalModel  # noqa
 from .history import HistoryModel  # noqa
 
 __all__ = [
-    'SlugModel', 'TimestampedModel', 'UUIDModel', 'SerializerModel',
-    'SignalsModel', 'HistoryModel', 'SoftDeleteSignalModel',
+    "SlugModel",
+    "TimestampedModel",
+    "UUIDModel",
+    "SerializerModel",
+    "SignalsModel",
+    "HistoryModel",
+    "SoftDeleteSignalModel",
 ]

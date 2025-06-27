@@ -53,7 +53,9 @@ class TestSoftDeleteQuerySetFunctionality:
         instance_id = instance.pk
 
         # Hard delete
-        deleted, rows_count = TestSoftDeleteModel.objects.filter(pk=instance.pk).hard_delete()
+        deleted, rows_count = TestSoftDeleteModel.objects.filter(
+            pk=instance.pk
+        ).hard_delete()
 
         # Should be completely removed from database
         assert not TestSoftDeleteModel.all_objects.filter(pk=instance_id).exists()
@@ -73,7 +75,7 @@ class TestSoftDeleteQuerySetFunctionality:
 
         # Try to hard delete after values() - should raise TypeError
         with pytest.raises(TypeError):
-            TestSoftDeleteModel.objects.values('name').hard_delete()
+            TestSoftDeleteModel.objects.values("name").hard_delete()
 
     def test_hard_delete_after_values_list(self):
         """Test hard delete after values_list() raises TypeError."""
@@ -81,7 +83,7 @@ class TestSoftDeleteQuerySetFunctionality:
 
         # Try to hard delete after values_list() - should raise TypeError
         with pytest.raises(TypeError):
-            TestSoftDeleteModel.objects.values_list('name').hard_delete()
+            TestSoftDeleteModel.objects.values_list("name").hard_delete()
 
     def test_restore(self):
         """Test restore functionality."""
@@ -113,7 +115,7 @@ class TestSoftDeleteQuerySetFunctionality:
 
         # Should contain truncation message
         assert "...(remaining elements truncated)..." in repr_str
-        assert repr_str.startswith('<QuerySet')
+        assert repr_str.startswith("<QuerySet")
 
     def test_queryset_repr_small(self):
         """Test QuerySet __repr__ method with small dataset."""
@@ -127,7 +129,7 @@ class TestSoftDeleteQuerySetFunctionality:
 
         # Should not contain truncation message
         assert "...(remaining elements truncated)..." not in repr_str
-        assert repr_str.startswith('<QuerySet')
+        assert repr_str.startswith("<QuerySet")
 
 
 class TestSoftDeleteSignalsManagerFunctionality:

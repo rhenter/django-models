@@ -1,5 +1,5 @@
 from functools import partial
-from typing import Any, Dict, Type, Optional
+from typing import Any, Dict, Type
 from uuid import UUID
 
 from django.db import models
@@ -38,7 +38,8 @@ class ActiveModel(models.Model):
     Attributes:
         is_active (BooleanField): Boolean field indicating if the record is active
     """
-    is_active = models.BooleanField(_('Active'), default=True)
+
+    is_active = models.BooleanField(_("Active"), default=True)
 
     class Meta:
         abstract = True
@@ -56,10 +57,11 @@ class CodeModel(models.Model):
     Attributes:
         code (CharField): Unique 8-character code automatically generated
     """
+
     code = models.CharField(
         max_length=32,
         default=generate_code,
-        verbose_name=_('Model code'),
+        verbose_name=_("Model code"),
         unique=True,
     )
 
@@ -85,12 +87,13 @@ class SerializerModel(BaseModel):
         Returns:
             A ModelSerializer class configured for this model instance
         """
+
         class SelfSerializer(ModelSerializer):
             class Meta:
                 pass
 
         SelfSerializer.Meta.model = self
-        SelfSerializer.Meta.fields = '__all__'
+        SelfSerializer.Meta.fields = "__all__"
         return SelfSerializer
 
     def serialize(self) -> Dict[str, Any]:
@@ -126,6 +129,7 @@ class SlugModel(BaseModel):
     Attributes:
         slug (SlugField): URL-friendly identifier field
     """
+
     slug = models.SlugField(max_length=16)
 
     class Meta:
@@ -143,7 +147,10 @@ class SortOrderModel(models.Model):
     Attributes:
         sort_order (PositiveIntegerField): Field for manual ordering of instances
     """
-    sort_order = models.PositiveIntegerField(default=0, blank=False, null=False, verbose_name=_("Sort"))
+
+    sort_order = models.PositiveIntegerField(
+        default=0, blank=False, null=False, verbose_name=_("Sort")
+    )
 
     class Meta:
         abstract = True
@@ -163,11 +170,12 @@ class SortOrderModel(models.Model):
             return self.sort_order
 
         # Get the highest sort_order value from existing instances
-        last_instance = type(self).objects.order_by('-sort_order').first()
+        last_instance = type(self).objects.order_by("-sort_order").first()
         if last_instance and last_instance.sort_order:
             return last_instance.sort_order + 1
 
         return 1
+
 
 class TimestampedModel(models.Model):
     """
@@ -181,12 +189,11 @@ class TimestampedModel(models.Model):
         created_at (DateTimeField): Timestamp when the instance was created
         updated_at (DateTimeField): Timestamp when the instance was last updated
     """
+
     created_at = models.DateTimeField(
-        db_index=True, auto_now_add=True, verbose_name=_('Created at')
+        db_index=True, auto_now_add=True, verbose_name=_("Created at")
     )
-    updated_at = models.DateTimeField(
-        auto_now=True, verbose_name=_('Updated at')
-    )
+    updated_at = models.DateTimeField(auto_now=True, verbose_name=_("Updated at"))
 
     class Meta:
         abstract = True
@@ -203,6 +210,7 @@ class UUIDModel(BaseModel):
     Attributes:
         id (UUIDPrimaryKeyField): UUID primary key field
     """
+
     id = UUIDPrimaryKeyField()
 
     class Meta:

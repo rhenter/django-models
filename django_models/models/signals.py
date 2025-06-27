@@ -1,4 +1,3 @@
-import inspect
 from typing import Any, Dict, Optional
 
 from django.db import models, transaction
@@ -16,7 +15,7 @@ class SignalsModel(SerializerModel):
     custom event triggers. It allows you to define methods that will be called
     before and after save/delete operations by naming them with specific prefixes:
     - pre_save_*: Called before saving
-    - post_save_*: Called after saving  
+    - post_save_*: Called after saving
     - pre_delete_*: Called before deletion
     - post_delete_*: Called after deletion
 
@@ -24,6 +23,7 @@ class SignalsModel(SerializerModel):
         SOFT_DELETE (bool): Whether this model supports soft deletion
         objects (SignalsManager): Custom manager for signal-aware operations
     """
+
     SOFT_DELETE = False
 
     class Meta:
@@ -44,12 +44,9 @@ class SignalsModel(SerializerModel):
         Returns:
             Dictionary containing context information for signal handlers
         """
-        force_insert = kwargs.get('force_insert', False)
-        creation_conditions = (
-            self.id is None,
-            force_insert is True
-        )
-        context = {'is_creation': any(creation_conditions)}
+        force_insert = kwargs.get("force_insert", False)
+        creation_conditions = (self.id is None, force_insert is True)
+        context = {"is_creation": any(creation_conditions)}
         context.update(kwargs)
         return context
 
@@ -68,10 +65,10 @@ class SignalsModel(SerializerModel):
         for attribute in dir(self):
             if attribute.startswith(event_name):
                 method = getattr(self, attribute)
-                if callable(method) and not attribute.startswith('_'):
+                if callable(method) and not attribute.startswith("_"):
                     try:
                         method(context)
-                    except Exception as e:
+                    except Exception:
                         # Log the error but don't break the flow
                         # You might want to use proper logging here
                         pass
@@ -88,14 +85,14 @@ class SignalsModel(SerializerModel):
             *args: Variable length argument list passed to parent save
             **kwargs: Arbitrary keyword arguments passed to parent save
         """
-        force_insert = kwargs.get('force_insert', False)
+        force_insert = kwargs.get("force_insert", False)
         context = self.get_context(force_insert=force_insert)
 
         with transaction.atomic():
-            self.trigger_event('pre_save', context)
+            self.trigger_event("pre_save", context)
             super().save(*args, **kwargs)
 
-        self.trigger_event('post_save', context)
+        self.trigger_event("post_save", context)
 
     def delete(self, *args: Any, **kwargs: Any) -> Optional[tuple]:
         """
@@ -114,16 +111,16 @@ class SignalsModel(SerializerModel):
         """
         context = self.get_context()
 
-        if self.SOFT_DELETE and not kwargs.pop('hard_delete', False):
+        if self.SOFT_DELETE and not kwargs.pop("hard_delete", False):
             self.deleted_at = timezone.now()  # type: ignore
             self.is_deleted = True  # type: ignore
             self.save()
             return None
 
         with transaction.atomic():
-            self.trigger_event('pre_delete', context)
+            self.trigger_event("pre_delete", context)
             result = super().delete(*args, **kwargs)
-            self.trigger_event('post_delete', context)
+            self.trigger_event("post_delete", context)
             return result
 
 
@@ -146,6 +143,7 @@ class SoftDeleteSignalModel(SignalsModel):
         objects (SoftDeleteSignalsManager): Manager that excludes deleted records
         all_objects (SoftDeleteSignalsManager): Manager that includes all records
     """
+
     SOFT_DELETE = True
     deleted_at = models.DateTimeField(blank=True, null=True)
     is_deleted = models.BooleanField(default=False)

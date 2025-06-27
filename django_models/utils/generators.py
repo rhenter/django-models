@@ -14,8 +14,8 @@ def generate_random_code(length=10):
 
 
 def generate_md5_hashcode(key_word):
-    keyword = '{}-{}'.format(key_word, time.time())
-    hashcode = hashlib.md5(keyword.encode('utf-8')).hexdigest()
+    keyword = "{}-{}".format(key_word, time.time())
+    hashcode = hashlib.md5(keyword.encode("utf-8")).hexdigest()
     return hashcode
 
 
@@ -35,14 +35,14 @@ def generate_cpf():
 
         cpf.append(11 - val if val > 1 else 0)
 
-    return '%s%s%s.%s%s%s.%s%s%s-%s%s' % tuple(cpf)
+    return "%s%s%s.%s%s%s.%s%s%s-%s%s" % tuple(cpf)
 
 
 def generate_cnpj():
-    def calculate_special_digit(l):
+    def calculate_special_digit(digits):
         digit = 0
 
-        for i, v in enumerate(l):
+        for i, v in enumerate(digits):
             digit += v * (i % 8 + 2)
 
         digit = 11 - digit % 11
@@ -54,4 +54,4 @@ def generate_cnpj():
     for _ in range(2):
         cnpj = [calculate_special_digit(cnpj)] + cnpj
 
-    return '%s%s.%s%s%s.%s%s%s/%s%s%s%s-%s%s' % tuple(cnpj[::-1])
+    return "%s%s.%s%s%s.%s%s%s/%s%s%s%s-%s%s" % tuple(cnpj[::-1])

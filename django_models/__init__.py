@@ -17,7 +17,7 @@ This library includes:
 
 from typing import List
 
-default_app_config = 'django_models.apps.DjangoModelsConfig'
+default_app_config = "django_models.apps.DjangoModelsConfig"
 
 from .version import __version__  # noqa
 from . import utils  # noqa
@@ -25,10 +25,4 @@ from . import fields  # noqa
 from . import forms  # noqa
 from . import validators  # noqa
 
-__all__: List[str] = [
-    '__version__',
-    'utils',
-    'fields', 
-    'forms',
-    'validators'
-]
+__all__: List[str] = ["__version__", "utils", "fields", "forms", "validators"]

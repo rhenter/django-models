@@ -4,8 +4,13 @@ from django.test import TestCase
 from django.db import models
 from django_models.models.generic import UUIDModel
 from testapp.models import (
-    TestSortOrderModel, TestSerializerModel, TestUUIDSerializerModel,
-    TestCodeModel, TestSlugModel, TestActiveModel, TestTimestampedModel
+    TestSortOrderModel,
+    TestSerializerModel,
+    TestUUIDSerializerModel,
+    TestCodeModel,
+    TestSlugModel,
+    TestActiveModel,
+    TestTimestampedModel,
 )
 
 pytestmark = pytest.mark.django_db
@@ -87,8 +92,8 @@ class TestSerializerModelFunctionality:
 
         # Check that UUID field is converted to string
         assert isinstance(instance.id, UUID)
-        assert isinstance(data['id'], str)
-        assert data['name'] == "test"
+        assert isinstance(data["id"], str)
+        assert data["name"] == "test"
 
     def test_serialize_without_uuid_field(self):
         """Test serialize method without UUID fields."""
@@ -99,8 +104,8 @@ class TestSerializerModelFunctionality:
         data = instance.serialize()
 
         # Check basic serialization
-        assert data['name'] == "test"
-        assert 'id' in data
+        assert data["name"] == "test"
+        assert "id" in data
 
     def test_serializer_property(self):
         """Test serializer property returns correct serializer class."""
@@ -110,9 +115,9 @@ class TestSerializerModelFunctionality:
         serializer_class = instance.serializer
 
         # Should be a ModelSerializer subclass
-        assert hasattr(serializer_class, 'Meta')
+        assert hasattr(serializer_class, "Meta")
         assert serializer_class.Meta.model == instance
-        assert serializer_class.Meta.fields == '__all__'
+        assert serializer_class.Meta.fields == "__all__"
 
 
 class TestCodeModelFunctionality:
@@ -123,7 +128,7 @@ class TestCodeModelFunctionality:
         instance = TestCodeModel.objects.create(name="test")
 
         # Should have a code field
-        assert hasattr(instance, 'code')
+        assert hasattr(instance, "code")
         assert instance.code is not None
         assert len(instance.code) > 0
 
@@ -136,7 +141,7 @@ class TestSlugModelFunctionality:
         instance = TestSlugModel(name="test", slug="test-slug")
 
         # Should have a slug field
-        assert hasattr(instance, 'slug')
+        assert hasattr(instance, "slug")
         assert instance.slug == "test-slug"
 
 
@@ -148,7 +153,7 @@ class TestActiveModelFunctionality:
         instance = TestActiveModel.objects.create(name="test")
 
         # Should have is_active field defaulting to True
-        assert hasattr(instance, 'is_active')
+        assert hasattr(instance, "is_active")
         assert instance.is_active is True
 
     def test_active_model_inactive(self):
@@ -167,8 +172,8 @@ class TestTimestampedModelFunctionality:
         instance = TestTimestampedModel.objects.create(name="test")
 
         # Should have timestamp fields
-        assert hasattr(instance, 'created_at')
-        assert hasattr(instance, 'updated_at')
+        assert hasattr(instance, "created_at")
+        assert hasattr(instance, "updated_at")
         assert instance.created_at is not None
         assert instance.updated_at is not None
 
@@ -178,16 +183,17 @@ class TestUUIDModelFunctionality:
 
     def test_uuid_model_creation(self):
         """Test UUIDModel creates instances with UUID primary key."""
+
         # Create a test model that inherits from UUIDModel
         class TestUUIDOnlyModel(UUIDModel):
             name = models.CharField(max_length=100)
 
             class Meta:
-                app_label = 'testapp'
+                app_label = "testapp"
 
         instance = TestUUIDOnlyModel(name="test")
 
         # Should have UUID id field
-        assert hasattr(instance, 'id')
+        assert hasattr(instance, "id")
         # ID should be None before saving (auto-generated on save)
         assert instance.id is None or isinstance(instance.id, UUID)
