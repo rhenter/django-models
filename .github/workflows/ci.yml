@@ -32,7 +32,7 @@ jobs:
 
     - name: Run tests
       run: |
-        cd test-django-project && py.test -vvv -s --cov django_models --cov-report=term-missing --cov-report=html
+        cd test-django-project && pytest --cov=django_models --cov-branch --cov-report=xml --cov-report=term --maxfail=2 --timeout=120
 
     - name: Upload test results to Codecov
       if: ${{ !cancelled() }}
