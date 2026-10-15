@@ -9,8 +9,8 @@ Django Models é uma biblioteca com vários Modelos úteis para Django para ajud
 Requirements
 ============
 
-- Python 3.8 ou mais novo
-- Django 1.11 ou mais novo
+- Python 3.10 ou mais novo
+- Django 5.0 a 6.x
 
 Features
 ========

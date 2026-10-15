@@ -1,13 +1,26 @@
-import codecs
 import os
 import re
 from typing import List
 
 from setuptools import setup, find_packages, Command
-from django_models.utils import get_version_from_changes
 
 here = os.path.abspath(os.path.dirname(__file__))
-version = get_version_from_changes(here)
+
+
+def get_version_from_changes() -> str:
+    changes_path = os.path.join(here, "CHANGES.rst")
+    version_pattern = re.compile(r"^(?P<version>[0-9]+\.[0-9]+(?:\.[0-9]+)?)")
+
+    with open(changes_path, encoding="utf-8") as changes_file:
+        for line in changes_file:
+            match = version_pattern.match(line)
+            if match:
+                return match.group("version")
+
+    raise ValueError("No version found in CHANGES.rst")
+
+
+version = get_version_from_changes()
 
 
 # Save last Version
@@ -34,14 +47,14 @@ save_version()
 
 
 # Get the long description
-with codecs.open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
+with open(os.path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 # Get changelog
-with codecs.open(os.path.join(here, 'CHANGES.rst'), encoding='utf-8') as f:
+with open(os.path.join(here, 'CHANGES.rst'), encoding='utf-8') as f:
     changelog = f.read()
 
-with codecs.open(os.path.join(here, 'requirements.txt')) as f:
+with open(os.path.join(here, 'requirements.txt'), encoding='utf-8') as f:
     install_requires = [line for line in f.readlines() if not line.startswith('#')]
 
 
@@ -69,14 +82,17 @@ setup(
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Framework :: Django',
+        'Framework :: Django :: 5.0',
+        'Framework :: Django :: 5.1',
+        'Framework :: Django :: 5.2',
+        'Framework :: Django :: 6.0',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.8',
-        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3.10',
         'Programming Language :: Python :: 3.11',
         'Programming Language :: Python :: 3.12',
+        'Programming Language :: Python :: 3.13',
+        'Programming Language :: Python :: 3.14',
         'Topic :: Software Development :: Libraries',
         'Topic :: Software Development :: Libraries :: Python Modules',
         'Typing :: Typed',
@@ -87,8 +103,10 @@ setup(
     keywords='models tools django signal',
     license='MIT',
     long_description=long_description,
+    long_description_content_type='text/x-rst',
     name='django-models',
-    packages=find_packages(exclude=['docs', 'tests*']),
+    packages=find_packages(exclude=['docs', 'tests*', 'test-django-project*']),
+    python_requires='>=3.10',
     url='https://github.com/rhenter/django-models',
     version=version,
 )

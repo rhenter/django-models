@@ -4,8 +4,8 @@ Development Installation
 Requirements
 ------------
 
-- Python 3.x
-- Django 1.11 or later
+- Python 3.10 or later
+- Django 5.0 to 6.x
 
 
 Development install

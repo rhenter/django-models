@@ -66,12 +66,7 @@ class SignalsModel(SerializerModel):
             if attribute.startswith(event_name):
                 method = getattr(self, attribute)
                 if callable(method) and not attribute.startswith("_"):
-                    try:
-                        method(context)
-                    except Exception:
-                        # Log the error but don't break the flow
-                        # You might want to use proper logging here
-                        pass
+                    method(context)
 
     def save(self, *args: Any, **kwargs: Any) -> None:
         """

@@ -1,2 +1,2 @@
-class HistoryModelNotSetError(BaseException):
+class HistoryModelNotSetError(Exception):
     pass

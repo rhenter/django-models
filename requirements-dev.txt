@@ -1,5 +1,6 @@
 -r requirements-ci.txt
 check-manifest
+build
 codecov
 coveralls
 ipdb

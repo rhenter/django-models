@@ -102,3 +102,17 @@ def test_signals_model_delete():
 
     assert obj.debug_info["pre_delete_handler_called"] == 1
     assert obj.debug_info["post_delete_handler_called"] == 1
+
+
+def test_signal_handler_errors_are_propagated():
+    obj = SampleSignalsModel(name="test")
+
+    def fail(_context):
+        raise RuntimeError("handler failed")
+
+    obj.pre_save = fail
+
+    with pytest.raises(RuntimeError, match="handler failed"):
+        obj.save()
+
+    assert not SampleSignalsModel.objects.filter(name="test").exists()

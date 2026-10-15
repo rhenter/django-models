@@ -1,3 +1,5 @@
+PYTHON ?= python
+
 clean: clean-eggs clean-build clean-htmlcov
 	@find . -iname '*.pyc' -delete
 	@find . -iname '*.pyo' -delete
@@ -21,15 +23,15 @@ lint:
 	pre-commit run -av
 
 pip-dev:
-	pip install -r requirements-dev.txt
+	$(PYTHON) -m pip install -r requirements-dev.txt
 
-test: deps
-	cd test-django-project && py.test -vvv
+test:
+	$(PYTHON) -m pytest
 
 build: clean
-	python setup.py sdist bdist_wheel
+	$(PYTHON) -m build
 
 release: build
-	git tag `python setup.py -q version`
-	git push origin `python setup.py -q version`
-	twine upload dist/*
+	git tag `$(PYTHON) setup.py -q version`
+	git push origin `$(PYTHON) setup.py -q version`
+	$(PYTHON) -m twine upload dist/*

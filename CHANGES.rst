@@ -1,5 +1,16 @@
 Changelog
 =========
+1.1.0
+~~~~~
+
+- Added support for Python 3.13 and 3.14
+- Added support for Django 6.0
+- Added a GitHub Actions test matrix for supported Python and Django versions
+- Fixed signal handlers silently suppressing exceptions
+- Fixed the test and release Makefile targets
+- Fixed test project files being included in the wheel
+- Modernized package builds with the standard Python build frontend
+
 1.0
 ~~~
 
